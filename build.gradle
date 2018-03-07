@@ -14,6 +14,8 @@ buildscript {
 apply plugin: 'me.champeau.jbake'
 
 task publish(type: GradleBuild) {
+  group = 'Publishing'
+  description = 'Publish docs to Git gh-pages branch'
   buildFile = 'publish.gradle'
   tasks = ['gitPublishPush']
 }
