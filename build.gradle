@@ -19,7 +19,3 @@ task publish(type: GradleBuild) {
   buildFile = 'publish.gradle'
   tasks = ['publishGhPages']
 }
-
-task wrapper(type: Wrapper) {
-  gradleVersion = '2.1'
-}
