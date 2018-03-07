@@ -1,20 +1,25 @@
 buildscript {
   repositories {
     jcenter()
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
   }
 
   dependencies {
-    classpath 'org.ajoberstar:gradle-git:0.11.0'
+    classpath 'org.ajoberstar:gradle-git-publish:0.4.0-rc.2'
   }
 }
 
-apply plugin: 'org.ajoberstar.github-pages'
+apply plugin: 'org.ajoberstar.git-publish'
 
-githubPages {
+gitPublish {
   repoUri = 'git@github.com:gretty-gradle-plugin/gretty-doc.git'
-  pages {
+  branch = 'gh-pages'
+  contents {
     from(file('build/jbake')) {
-   	  into '.'                                    
+      into '.'
     }
   }
+  commitMessage = 'Publish of Github pages from Gradle.'
 }
