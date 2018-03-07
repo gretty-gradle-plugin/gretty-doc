@@ -10,7 +10,7 @@ against "alien" web-app, coming in form of WAR-file. Example:
 
 [source,groovy]
 ----
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 
 test {
   include '**/Test*.*'
@@ -42,4 +42,4 @@ With such setup just invoke `gradle farmIntegrationTest` to run integration test
 
 The complete working example of overriding context path in integration test tasks is available here:
 
-https://github.com/akhikhl/gretty/tree/master/examples/testWar
+https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/testWar

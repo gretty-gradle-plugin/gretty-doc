@@ -32,7 +32,7 @@ The object called appRunDebug is actually an instance of link:Gretty-task-classe
 
 [source,groovy]
 ----
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 
 import org.akhikhl.gretty.AppStartTask
 

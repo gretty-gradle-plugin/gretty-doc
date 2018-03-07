@@ -30,7 +30,7 @@ The object called appStart is actually an instance of link:Gretty-task-classes.h
 
 [source,groovy]
 ----
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 
 import org.akhikhl.gretty.AppStartTask
 

@@ -52,8 +52,8 @@ Tomcat-specific realmConfigFile resolution rules are described in link:Tomcat-se
 
 Gretty fully supports single sign-on with link:Product-generation.html[product generation]. Gretty sources contain the following examples of multiple web-apps with single sign-on:
 
-* https://github.com/akhikhl/gretty/tree/master/examples/farmSecure
-* https://github.com/akhikhl/gretty/tree/master/examples/spring-boot-farm-secure
+* https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/farmSecure
+* https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/spring-boot-farm-secure
 
 All you have to do is to run `gradle buildProduct` and try running the generated products in "buildDir/output" subdirectory.
 

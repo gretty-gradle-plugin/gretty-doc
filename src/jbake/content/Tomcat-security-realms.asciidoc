@@ -140,7 +140,7 @@ In the example above ProjectA uses realm configuration "auth3"/"tomcat-realm3.pr
 
 Gretty contains example programs, demonstrating use of Tomcat security realms:
 
-* https://github.com/akhikhl/gretty/tree/master/examples/secureGretty
-* https://github.com/akhikhl/gretty/tree/master/examples/farmSecure
-* https://github.com/akhikhl/gretty/tree/master/examples/spring-boot-farm-secure
+* https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/secureGretty
+* https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/farmSecure
+* https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/spring-boot-farm-secure
 

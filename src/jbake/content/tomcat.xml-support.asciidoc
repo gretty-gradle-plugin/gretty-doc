@@ -39,7 +39,7 @@ When you run a farm or generate product from a farm, serverConfigFile is taken f
 
 Gretty sources contain example program demonstrating support of "tomcat.xml" at work:
 
-https://github.com/akhikhl/gretty/tree/master/examples/testTomcatServerConfig
+https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/testTomcatServerConfig
 
 See also:
 

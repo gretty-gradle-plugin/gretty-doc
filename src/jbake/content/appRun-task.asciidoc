@@ -30,7 +30,7 @@ The object called appRun is actually an instance of link:Gretty-task-classes.htm
 
 [source,groovy]
 ----
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 
 import org.akhikhl.gretty.AppStartTask
 

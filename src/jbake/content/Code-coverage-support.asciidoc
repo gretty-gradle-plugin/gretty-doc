@@ -90,7 +90,7 @@ Here is the example of server-side code coverage configuration:
 
 [source,groovy]
 ----
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 apply plugin: 'jacoco'
 
 // ...
@@ -181,13 +181,13 @@ TIP: When instantiating AppBeforeIntegrationTestTask and AppAfterIntegrationTest
 Gretty contains the complete and working examples of Jacoco code coverage:
 
 * Code coverage with standard Gretty tasks: +
-  https://github.com/akhikhl/gretty/tree/master/examples/jacocoExample
+  https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/jacocoExample
 
 * Code coverage with instantiated Gretty tasks: +
-  https://github.com/akhikhl/gretty/tree/master/examples/jacocoInstantiateTasks
+  https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/jacocoInstantiateTasks
 
 * Code coverage with link:Multiple-web-apps-introduction.html[multiple web-apps]: +
-  https://github.com/akhikhl/gretty/tree/master/examples/farmJacoco
+  https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/farmJacoco
 
 == Troubleshooting
 

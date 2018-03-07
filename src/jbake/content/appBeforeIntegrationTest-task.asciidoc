@@ -22,7 +22,7 @@ The object called appBeforeIntegrationTest is actually an instance of link:Grett
 
 [source,groovy]
 ----
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 
 import org.akhikhl.gretty.AppBeforeIntegrationTestTask
 

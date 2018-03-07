@@ -29,7 +29,7 @@ The object called tomcatStartWar is actually an instance of link:Gretty-task-cla
 
 [source,groovy]
 ----
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 
 import org.akhikhl.gretty.TomcatStartTask
 

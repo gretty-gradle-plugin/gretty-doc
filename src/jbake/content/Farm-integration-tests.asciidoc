@@ -42,11 +42,11 @@ gradle farmIntegrationTestXYZ
 
 There following example projects demonstrate farm integration tests at work:
 
-https://github.com/akhikhl/gretty/tree/master/examples/farm[Simple farm]
+https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/farm[Simple farm]
 
-https://github.com/akhikhl/gretty/tree/master/examples/farmSecure[Secure farm]
+https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/farmSecure[Secure farm]
 
-https://github.com/akhikhl/gretty/tree/master/examples/spring-boot-farm[Spring Boot farm]
+https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/spring-boot-farm[Spring Boot farm]
 
-https://github.com/akhikhl/gretty/tree/master/examples/spring-boot-farm-secure[Secure Spring Boot farm]
+https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/spring-boot-farm-secure[Secure Spring Boot farm]
 

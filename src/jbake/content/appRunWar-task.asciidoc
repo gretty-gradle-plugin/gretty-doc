@@ -29,7 +29,7 @@ The object called appRunWar is actually an instance of link:Gretty-task-classes.
 
 [source,groovy]
 ----
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 
 import org.akhikhl.gretty.AppStartTask
 

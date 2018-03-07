@@ -30,5 +30,5 @@ Web-app serves the specified directories at the web-app context path.
 
 When Gretty assembles a product, it copies extra resource bases into product directory and registers them within "server.json". The running product serves extra resource bases listed in "server.json".
 
-Gretty sources contain https://github.com/akhikhl/gretty/tree/master/examples/extraResourceBases[example program] demonstrating web-app extra resource bases at work.
+Gretty sources contain https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/extraResourceBases[example program] demonstrating web-app extra resource bases at work.
 

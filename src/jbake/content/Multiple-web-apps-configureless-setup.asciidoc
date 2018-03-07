@@ -32,25 +32,25 @@ buildscript {
   }
 
   dependencies {
-    classpath 'org.akhikhl.gretty:gretty:+'
+    classpath 'org.gretty:gretty:+'
   }
 }
 
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 ----
 
 Create file "ProjectA/ProjectB/build.gradle", insert code:
 
 [source,groovy]
 ----
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 ----
 
 Create file "ProjectA/ProjectC/build.gradle", insert code:
 
 [source,groovy]
 ----
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 ----
 
 Done! Now you can run multiple web-apps by running the following command in ProjectA:

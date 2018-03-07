@@ -38,7 +38,7 @@ When you generate a link:Product-generation.html[product] and "jetty-env.xml" re
 
 Gretty sources contain example programs demonstrating support of "jetty-env.xml" at work:
 
-https://github.com/akhikhl/gretty/tree/master/examples/testJettyContextConfig
+https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/testJettyContextConfig
 
 See also:
 

@@ -11,4 +11,4 @@ For publishing to github.io:
 
 The publish documentation will be visible at the address:
 
-http://akhikhl.github.io/gretty-doc/
+https://gretty-gradle-plugin.github.io/gretty-doc/

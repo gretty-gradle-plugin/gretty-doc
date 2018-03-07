@@ -28,7 +28,7 @@ The object called appStartWarDebug is actually an instance of link:Gretty-task-c
 
 [source,groovy]
 ----
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 
 import org.akhikhl.gretty.AppStartTask
 

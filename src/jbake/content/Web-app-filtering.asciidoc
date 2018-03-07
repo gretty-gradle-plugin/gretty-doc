@@ -30,5 +30,5 @@ webappCopy closure is automatically invoked when:
 
 TIP: There's no need to duplicate CopySpec-specific code in gretty and War task. You can hold all filtering code in gretty.webappCopy. Gretty automatically reconfigures War task with gretty.webappCopy.
 
-Gretty sources contain https://github.com/akhikhl/gretty/tree/master/examples/filterWebapp[example program] demonstrating web-app filtering at work.
+Gretty sources contain https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/filterWebapp[example program] demonstrating web-app filtering at work.
 

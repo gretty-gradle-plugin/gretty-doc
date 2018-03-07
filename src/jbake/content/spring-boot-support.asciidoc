@@ -22,7 +22,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'org.akhikhl.gretty:gretty:+'
+    classpath 'org.gretty:gretty:+'
   }
 }
 
@@ -41,7 +41,7 @@ Now you can run your Spring Boot application with the command `gradle appRun`.
 
 The complete sources for the simplest Gretty Spring Boot setup:
 
-* https://github.com/akhikhl/gretty/tree/master/examples/spring-boot-simple[spring-boot-simple]
+* https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/spring-boot-simple[spring-boot-simple]
 
 == Running on specific version of spring boot
 
@@ -56,7 +56,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'org.akhikhl.gretty:gretty:+'
+    classpath 'org.gretty:gretty:+'
   }
 }
 
@@ -130,7 +130,7 @@ Web-apps can be Spring Boot or "normal", in any combinations - Gretty will sort 
 
 Gretty contains example program, showing multi-web-app setup with Spring Boot:
 
-* https://github.com/akhikhl/gretty/tree/master/examples/spring-boot-farm[spring-boot-farm]
+* https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/spring-boot-farm[spring-boot-farm]
 
 == Servlet container versions and Spring Boot
 

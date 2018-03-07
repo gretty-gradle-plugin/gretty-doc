@@ -38,7 +38,7 @@ When you generate a link:Product-generation.html[product] and "tomcat-context.xm
 
 Gretty sources contain example programs demonstrating support of "tomcat-context.xml" at work:
 
-https://github.com/akhikhl/gretty/tree/master/examples/testTomcatContextConfig
+https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/testTomcatContextConfig
 
 See also:
 

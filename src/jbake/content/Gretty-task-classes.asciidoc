@@ -57,7 +57,7 @@ If, during task execution, Gretty sees that some property of AppStartTask is nul
 
 [source,groovy]
 ----
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 
 gretty {
   contextPath = '/abc'

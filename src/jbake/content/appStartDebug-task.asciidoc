@@ -34,7 +34,7 @@ The object called appStartDebug is actually an instance of link:Gretty-task-clas
 
 [source,groovy]
 ----
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 
 import org.akhikhl.gretty.AppStartTask
 

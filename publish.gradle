@@ -11,7 +11,7 @@ buildscript {
 apply plugin: 'org.ajoberstar.github-pages'
 
 githubPages {
-  repoUri = 'git@github.com:akhikhl/gretty-doc.git'      
+  repoUri = 'git@github.com:gretty-gradle-plugin/gretty-doc.git'
   pages {
     from(file('build/jbake')) {
    	  into '.'                                    

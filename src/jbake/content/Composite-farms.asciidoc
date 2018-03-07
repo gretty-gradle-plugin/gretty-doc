@@ -75,5 +75,5 @@ farms {
 
 Gretty sources contain complete working example of composite farm:
 
-https://github.com/akhikhl/gretty/tree/master/examples/multifarm
+https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/multifarm
 

@@ -140,7 +140,7 @@ In the example above ProjectA uses realm configuration "auth3"/"jetty-realm3.pro
 
 Gretty contains example programs, demonstrating use of Jetty security realms:
 
-* https://github.com/akhikhl/gretty/tree/master/examples/secureGretty
-* https://github.com/akhikhl/gretty/tree/master/examples/farmSecure
-* https://github.com/akhikhl/gretty/tree/master/examples/spring-boot-farm-secure
+* https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/secureGretty
+* https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/farmSecure
+* https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/spring-boot-farm-secure
 

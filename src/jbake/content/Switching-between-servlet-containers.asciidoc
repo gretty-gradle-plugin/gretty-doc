@@ -6,14 +6,14 @@ Andrey Hihlovskiy
 :jbake-status: published
 
 Starting with version 1.0.0, Gretty supports unified interface to the servlet containers
-Jetty 7, 8 and 9, Tomcat 7 and 8. There's only one plugin to include: `org.akhikhl.gretty`.
+Jetty 7, 8 and 9, Tomcat 7 and 8. There's only one plugin to include: `org.gretty`.
 
 The syntax:
 
 [source,groovy]
 ----
 apply plugin: 'war' // optional if you use spring-boot
-apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+apply from: 'https://raw.github.com/gretty-gradle-plugin/gretty/master/pluginScripts/gretty.plugin'
 
 gretty {
   // supported values:
@@ -33,12 +33,12 @@ buildscript {
   }
 
   dependencies {
-    classpath 'org.akhikhl.gretty:gretty:+'
+    classpath 'org.gretty:gretty:+'
   }
 }
 
 apply plugin: 'war'
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 
 gretty {
   // supported values:
@@ -51,7 +51,7 @@ If you are using link:Multiple-web-apps-introduction.html[Gretty farms], the con
 
 [source,groovy]
 ----
-apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+apply from: 'https://raw.github.com/gretty-gradle-plugin/gretty/master/pluginScripts/gretty.plugin'
 
 farm {
   // supported values:

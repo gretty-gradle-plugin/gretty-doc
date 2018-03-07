@@ -66,5 +66,5 @@ the resulting task invokation sequence is:
 :RootProject:farmAfterIntegrationTest
 ----
 
-The full and working example program is found here: https://github.com/akhikhl/gretty/tree/master/examples/farm
+The full and working example program is found here: https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/farm
 

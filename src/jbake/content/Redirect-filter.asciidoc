@@ -52,7 +52,7 @@ filter scheme: 'http', {
 }
 ----
 
-TIP: you can (but you don't have to) add dependency `compile 'org.akhikhl.gretty:gretty-filter:$grettyVersion'` to your project - 
+TIP: you can (but you don't have to) add dependency `compile 'org.gretty:gretty-filter:$grettyVersion'` to your project - 
 this library implements redirect filter. Even if you don't add it explicitly, Gretty will do it for you automatically,
 as soon as it discovers redirect filter in "web.xml".
 

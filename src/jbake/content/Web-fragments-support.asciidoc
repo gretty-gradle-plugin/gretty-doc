@@ -11,7 +11,7 @@ NOTE: web fragments feature was introduced in servlet 3.0 specification, therefo
 
 Gretty sources contain example programs, demonstrating use of web-fragments:
 
-* https://github.com/akhikhl/gretty/tree/master/examples/webfragment8[webfragment8]
-* https://github.com/akhikhl/gretty/tree/master/examples/webhost8[webhost8]
-* https://github.com/akhikhl/gretty/tree/master/examples/webfragment9[webfragment9]
-* https://github.com/akhikhl/gretty/tree/master/examples/webhost9[webhost9]
+* https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/webfragment8[webfragment8]
+* https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/webhost8[webhost8]
+* https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/webfragment9[webfragment9]
+* https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/webhost9[webhost9]
