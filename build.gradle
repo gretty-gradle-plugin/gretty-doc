@@ -14,9 +14,13 @@ buildscript {
 apply plugin: 'base'
 apply plugin: 'org.jbake.site'
 
+bake.mustRunAfter clean
+
 task publish(type: GradleBuild) {
+  dependsOn 'clean', 'bake'
   group = 'Publishing'
   description = 'Publish docs to Git gh-pages branch'
   buildFile = 'publish.gradle'
   tasks = ['gitPublishPush']
 }
+
