@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,14 +62,12 @@
 		<h1>JEE annotations support</h1>
 	</div>
 
-	<p><div class="paragraph">
-<p>Gretty supports JEE annotations out-of-the-box. This means: you don&#8217;t
-have to configure anything, you just use JEE annotations in the
-web-app:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">import java.io.IOException;
+	<p><div class="paragraph"> 
+ <p>Gretty supports JEE annotations out-of-the-box. This means: you don’t have to configure anything, you just use JEE annotations in the web-app:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-java" data-lang="java">import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -85,36 +83,35 @@ public class ExampleServlet extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     // doGet implementation
   }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Note that jetty7 flavor of Gretty does not support JEE annotations, since it is using servlet-api 2.5.</p>
-</div>
-<div class="paragraph">
-<p>jetty8, jetty9, tomcat7, tomcat8 flavors of Gretty support JEE annotations in the current web-app and in it&#8217;s overlays (if any).</p>
-</div>
-<div class="paragraph">
-<p>Normally Gretty looks for JEE-annotated classes in "build/classes" directories belonging to the web-app classpath. You can change this behavior by inserting the following into "jetty-env.xml" (if you run on jetty):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+}</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>Note that jetty7 flavor of Gretty does not support JEE annotations, since it is using servlet-api 2.5.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>jetty8, jetty9, tomcat7, tomcat8 flavors of Gretty support JEE annotations in the current web-app and in it’s overlays (if any).</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Normally Gretty looks for JEE-annotated classes in "build/classes" directories belonging to the web-app classpath. You can change this behavior by inserting the following into "jetty-env.xml" (if you run on jetty):</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
 &lt;!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure.dtd"&gt;
 &lt;Configure class="org.eclipse.jetty.webapp.WebAppContext"&gt;
   &lt;Call name="setContextAttribute"&gt;
     &lt;Arg&gt;org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern&lt;/Arg&gt;
     &lt;Arg&gt;.*/foo-[^/]*\.jar$|.*/bar-[^/]*\.jar$|.*/classes/.*&lt;/Arg&gt;
   &lt;/Call&gt;
-&lt;/Configure&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>in the example above we specify, that Gretty should scan for annotations
-any jar whose name starts with "foo-" or "bar-", or a directory named "classes".</p>
-</div>
-<div class="paragraph">
-<p>See also: <a href="jetty-env.xml-support.html">"jetty-env.xml" support</a>.</p>
+&lt;/Configure&gt;</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>in the example above we specify, that Gretty should scan for annotations any jar whose name starts with "foo-" or "bar-", or a directory named "classes".</p> 
+</div> 
+<div class="paragraph"> 
+ <p>See also: <a href="jetty-env.xml-support.html">"jetty-env.xml" support</a>.</p> 
 </div></p>
 
 	<hr />
@@ -125,7 +122,7 @@ any jar whose name starts with "foo-" or "bar-", or a directory named "classes".
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

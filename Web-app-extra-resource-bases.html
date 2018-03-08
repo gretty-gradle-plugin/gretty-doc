@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,49 +62,49 @@
 		<h1>Web-app extra resource bases</h1>
 	</div>
 
-	<p><div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Since version 1.1.2 Gretty supports web-app extra resource bases. It means: additionally to "src/main/webapp" you can specify arbitrary directories that should be served as content of the given web-app.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">gretty {
+	<p><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Since version 1.1.2 Gretty supports web-app extra resource bases. It means: additionally to "src/main/webapp" you can specify arbitrary directories that should be served as content of the given web-app.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h2> 
+ <div class="sectionbody"> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">gretty {
   extraResourceBase 'directory1'
   extraResourceBase 'directory2'
   extraResourceBases 'directory3', 'directory4'
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>extraResourceBase is a function accepting string or java.io.File</p>
-</div>
-<div class="paragraph">
-<p>extraResourceBases is a function accepting a list of strings or java.io.File objects</p>
-</div>
-<div class="paragraph">
-<p>You can call extraResourceBase and extraResourceBases multiple times. The specified directories are added to internal collection of extra resource bases.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Web-app serves the specified directories at the web-app context path.</p>
-</div>
-<div class="paragraph">
-<p>When Gretty assembles a product, it copies extra resource bases into product directory and registers them within "server.json". The running product serves extra resource bases listed in "server.json".</p>
-</div>
-<div class="paragraph">
-<p>Gretty sources contain <a href="https://github.com/akhikhl/gretty/tree/master/examples/extraResourceBases">example program</a> demonstrating web-app extra resource bases at work.</p>
-</div>
-</div>
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>extraResourceBase is a function accepting string or java.io.File</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>extraResourceBases is a function accepting a list of strings or java.io.File objects</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You can call extraResourceBase and extraResourceBases multiple times. The specified directories are added to internal collection of extra resource bases.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Web-app serves the specified directories at the web-app context path.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>When Gretty assembles a product, it copies extra resource bases into product directory and registers them within "server.json". The running product serves extra resource bases listed in "server.json".</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty sources contain <a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/extraResourceBases">example program</a> demonstrating web-app extra resource bases at work.</p> 
+  </div> 
+ </div> 
 </div></p>
 
 	<hr />
@@ -115,7 +115,7 @@
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

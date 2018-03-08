@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,65 +62,60 @@
 		<h1>Web-app filtering</h1>
 	</div>
 
-	<p><div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Since version 1.1.2 Gretty can filter files in "src/main/webapp" the same way as processResources can filter files in "src/main/resources".</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">gretty {
+	<p><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Since version 1.1.2 Gretty can filter files in "src/main/webapp" the same way as processResources can filter files in "src/main/resources".</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h2> 
+ <div class="sectionbody"> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">gretty {
   webappCopy { CopySpec copySpec -&gt;
      // ...
   }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>here webappCopy is a closure, accepting org.gradle.api.file.CopySpec as a parameter.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>webappCopy closure is automatically invoked when:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>gradle performs one of Gretty run tasks</p>
-</li>
-<li>
-<p>gradle builds WAR file</p>
-</li>
-<li>
-<p>gradle builds a <a href="Product-generation.html">product</a></p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-There&#8217;s no need to duplicate CopySpec-specific code in gretty and War task. You can hold all filtering code in gretty.webappCopy. Gretty automatically reconfigures War task with gretty.webappCopy.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Gretty sources contain <a href="https://github.com/akhikhl/gretty/tree/master/examples/filterWebapp">example program</a> demonstrating web-app filtering at work.</p>
-</div>
-</div>
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>here webappCopy is a closure, accepting org.gradle.api.file.CopySpec as a parameter.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>webappCopy closure is automatically invoked when:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>gradle performs one of Gretty run tasks</p> </li> 
+    <li> <p>gradle builds WAR file</p> </li> 
+    <li> <p>gradle builds a <a href="Product-generation.html">product</a></p> </li> 
+   </ul> 
+  </div> 
+  <div class="admonitionblock tip"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> 
+       <div class="title">
+        Tip
+       </div> </td> 
+      <td class="content"> There’s no need to duplicate CopySpec-specific code in gretty and War task. You can hold all filtering code in gretty.webappCopy. Gretty automatically reconfigures War task with gretty.webappCopy. </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty sources contain <a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/filterWebapp">example program</a> demonstrating web-app filtering at work.</p> 
+  </div> 
+ </div> 
 </div></p>
 
 	<hr />
@@ -131,7 +126,7 @@ There&#8217;s no need to duplicate CopySpec-specific code in gretty and War task
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

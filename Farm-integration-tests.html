@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,61 +62,59 @@
 		<h1>Farm integration tests</h1>
 	</div>
 
-	<p><div class="paragraph">
-<p>Gretty supports <a href="Integration-tests-support.html">integration tests</a> on <a href="Multiple-web-apps-introduction.html">farms</a>,
-i.e. on multiple web-apps running on the same web-server.</p>
-</div>
-<div class="paragraph">
-<p>You don&#8217;t have to configure anything in order to use integration tests on farms. Your part is to create a farm and some integration tests,
-then run task:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">gradle farmIntegrationTest</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Gretty automatically starts and stops a servlet container before and after integration tests.</p>
-</div>
-<div class="paragraph">
-<p>Gretty automatically invokes all integration tests for all web-apps mentioned in a farm.</p>
-</div>
-<div class="paragraph">
-<p>If you use named farms, then you have to invoked specific tasks for named farms. For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">farms {
+	<p><div class="paragraph"> 
+ <p>Gretty supports <a href="Integration-tests-support.html">integration tests</a> on <a href="Multiple-web-apps-introduction.html">farms</a>, i.e. on multiple web-apps running on the same web-server.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>You don’t have to configure anything in order to use integration tests on farms. Your part is to create a farm and some integration tests, then run task:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">gradle farmIntegrationTest</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>Gretty automatically starts and stops a servlet container before and after integration tests.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Gretty automatically invokes all integration tests for all web-apps mentioned in a farm.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>If you use named farms, then you have to invoked specific tasks for named farms. For example:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">farms {
   farm 'XYZ', {
     webapp ':ProjectB'
     webapp ':ProjectC'
     webapp ':ProjectD'
   }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>then you have to invoke:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">gradle farmIntegrationTestXYZ</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>There following example projects demonstrate farm integration tests at work:</p>
-</div>
-<div class="paragraph">
-<p><a href="https://github.com/akhikhl/gretty/tree/master/examples/farm">Simple farm</a></p>
-</div>
-<div class="paragraph">
-<p><a href="https://github.com/akhikhl/gretty/tree/master/examples/farmSecure">Secure farm</a></p>
-</div>
-<div class="paragraph">
-<p><a href="https://github.com/akhikhl/gretty/tree/master/examples/spring-boot-farm">Spring Boot farm</a></p>
-</div>
-<div class="paragraph">
-<p><a href="https://github.com/akhikhl/gretty/tree/master/examples/spring-boot-farm-secure">Secure Spring Boot farm</a></p>
+}</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>then you have to invoke:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">gradle farmIntegrationTestXYZ</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>There following example projects demonstrate farm integration tests at work:</p> 
+</div> 
+<div class="paragraph"> 
+ <p><a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/farm">Simple farm</a></p> 
+</div> 
+<div class="paragraph"> 
+ <p><a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/farmSecure">Secure farm</a></p> 
+</div> 
+<div class="paragraph"> 
+ <p><a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/spring-boot-farm">Spring Boot farm</a></p> 
+</div> 
+<div class="paragraph"> 
+ <p><a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/spring-boot-farm-secure">Secure Spring Boot farm</a></p> 
 </div></p>
 
 	<hr />
@@ -127,7 +125,7 @@ then run task:</p>
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,56 +62,48 @@
 		<h1>appAfterIntegrationTest task</h1>
 	</div>
 
-	<p><div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty automatically invokes this task after integration test task, referred in
-<a href="Gretty-configuration.html#_integrationtesttask">integrationTestTask</a> property of gretty configuration.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-Internal task, please, don&#8217;t invoke it on command line!
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Sends "stop" signal to localhost:<a href="Gretty-configuration.html#_serviceport">servicePort</a> (default 9900).</p>
-</li>
-<li>
-<p>When "stop" signal comes, servlet-container process stops.</p>
-</li>
-<li>
-<p>Gradle script waits for servlet-container process to complete.</p>
-</li>
-<li>
-<p>Gradle script continues normal execution of tasks.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_instantiation_and_extension"><a class="anchor" href="#_instantiation_and_extension"></a>Instantiation and extension</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The object called appAfterIntegrationTest is actually an instance of <a href="Gretty-task-classes.html#_appafterintegrationtesttask">AppAfterIntegrationTestTask</a> class, created and configured for you by Gretty. You can instantiate or even extend this class on your own:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'org.akhikhl.gretty'
+	<p><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty automatically invokes this task after integration test task, referred in <a href="Gretty-configuration.html#_integrationtesttask">integrationTestTask</a> property of gretty configuration.</p> 
+  </div> 
+  <div class="admonitionblock warning"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> 
+       <div class="title">
+        Warning
+       </div> </td> 
+      <td class="content"> Internal task, please, don’t invoke it on command line! </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2> 
+ <div class="sectionbody"> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>Sends "stop" signal to localhost:<a href="Gretty-configuration.html#_serviceport">servicePort</a> (default 9900).</p> </li> 
+    <li> <p>When "stop" signal comes, servlet-container process stops.</p> </li> 
+    <li> <p>Gradle script waits for servlet-container process to complete.</p> </li> 
+    <li> <p>Gradle script continues normal execution of tasks.</p> </li> 
+   </ol> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_instantiation_and_extension"><a class="anchor" href="#_instantiation_and_extension"></a>Instantiation and extension</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>The object called appAfterIntegrationTest is actually an instance of <a href="Gretty-task-classes.html#_appafterintegrationtesttask">AppAfterIntegrationTestTask</a> class, created and configured for you by Gretty. You can instantiate or even extend this class on your own:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'org.gretty'
 
 import org.akhikhl.gretty.AppAfterIntegrationTestTask
 
@@ -125,16 +117,16 @@ class VerySpecialAfterIntegration extends AppAfterIntegrationTestTask {
 
 task('MyAfterIntegration2', type: VerySpecialAfterIntegration) {
   // ...
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If you are going to instantiate or extend this task class yourself, make sure you&#8217;ve learned it&#8217;s properties and methods.</p>
-</div>
-<div class="paragraph">
-<p>See also: <a href="Integration-tests-support.html">integration tests support</a>.</p>
-</div>
-</div>
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>If you are going to instantiate or extend this task class yourself, make sure you’ve learned it’s properties and methods.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>See also: <a href="Integration-tests-support.html">integration tests support</a>.</p> 
+  </div> 
+ </div> 
 </div></p>
 
 	<hr />
@@ -145,7 +137,7 @@ task('MyAfterIntegration2', type: VerySpecialAfterIntegration) {
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

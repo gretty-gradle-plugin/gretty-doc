@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,96 +62,94 @@
 		<h1>Multiple web-apps configureless setup</h1>
 	</div>
 
-	<p><div class="paragraph">
-<p>Create three empty folders: ProjectA, ProjectB and ProjectC, so that folder tree looks like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>ProjectA
+	<p><div class="paragraph"> 
+ <p>Create three empty folders: ProjectA, ProjectB and ProjectC, so that folder tree looks like this:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre>ProjectA
 |-- ProjectB
-\-- ProjectC</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Create file "ProjectA/settings.gradle", insert code:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">include 'ProjectA', 'ProjectB'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Explanation: we organize multi-project setup, so that multiple web-apps can be started/stopped by gretty plugin.</p>
-</div>
-<div class="paragraph">
-<p>Create file "ProjectA/build.gradle", insert code:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">buildscript {
+\-- ProjectC</pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>Create file "ProjectA/settings.gradle", insert code:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">include 'ProjectA', 'ProjectB'</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>Explanation: we organize multi-project setup, so that multiple web-apps can be started/stopped by gretty plugin.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Create file "ProjectA/build.gradle", insert code:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">buildscript {
   repositories {
     jcenter()
   }
 
   dependencies {
-    classpath 'org.akhikhl.gretty:gretty:+'
+    classpath 'org.gretty:gretty:+'
   }
 }
 
-apply plugin: 'org.akhikhl.gretty'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Create file "ProjectA/ProjectB/build.gradle", insert code:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'org.akhikhl.gretty'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Create file "ProjectA/ProjectC/build.gradle", insert code:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'org.akhikhl.gretty'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Done! Now you can run multiple web-apps by running the following command in ProjectA:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">gradle farmRun</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Expected output:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>Jetty 9.2.1.v20140609 started.
+apply plugin: 'org.gretty'</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>Create file "ProjectA/ProjectB/build.gradle", insert code:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'org.gretty'</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>Create file "ProjectA/ProjectC/build.gradle", insert code:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'org.gretty'</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>Done! Now you can run multiple web-apps by running the following command in ProjectA:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">gradle farmRun</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>Expected output:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre>Jetty 9.2.1.v20140609 started.
 :ProjectB runs at the address http://localhost:8080/ProjectB
 :ProjectC runs at the address http://localhost:8080/ProjectC
-Press any key to stop the jetty server.</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Of course, you&#8217;ll get 404 in the browser, because web-apps don&#8217;t contain any pages. But, as soon as you add pages or/and servlets to the web-apps, things will get real.</p>
-</div>
-<div class="paragraph">
-<p>Now explanation on the details of what we just did. We defined three gradle projects, all facilitated with gretty plugin.<br>
-The projects ProjectB and ProjectC are usual web-apps, potentially with src/main/webapp, configuration files, servlets etc.etc.<br>
-The project ProjectA is special. It defines <strong>farm</strong> - logical group of web-apps that should run together.</p>
-</div>
-<div class="paragraph">
-<p>By default farm automatically adds all subprojects of the farm project, which are facilitated with gretty plugin, to web-apps list. On the <a href="Configuring-default-farm.html">next page</a> you&#8217;ll see how you can control, which projects are added to a farm.</p>
-</div>
-<div class="paragraph">
-<p>Gretty plugin also defines distinct set of tasks for running farms: farmRun, farmRunDebug, farmRunWar, farmRunWarDebug, etc. (see complete list of farm tasks <a href="Farm-tasks.html">here</a>).</p>
-</div>
-<div class="paragraph">
-<p>See also: <a href="index.html#_multiple_web_apps">Multiple web-apps</a>.</p>
+Press any key to stop the jetty server.</pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>Of course, you’ll get 404 in the browser, because web-apps don’t contain any pages. But, as soon as you add pages or/and servlets to the web-apps, things will get real.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Now explanation on the details of what we just did. We defined three gradle projects, all facilitated with gretty plugin.<br> The projects ProjectB and ProjectC are usual web-apps, potentially with src/main/webapp, configuration files, servlets etc.etc.<br> The project ProjectA is special. It defines <strong>farm</strong> - logical group of web-apps that should run together.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>By default farm automatically adds all subprojects of the farm project, which are facilitated with gretty plugin, to web-apps list. On the <a href="Configuring-default-farm.html">next page</a> you’ll see how you can control, which projects are added to a farm.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Gretty plugin also defines distinct set of tasks for running farms: farmRun, farmRunDebug, farmRunWar, farmRunWarDebug, etc. (see complete list of farm tasks <a href="Farm-tasks.html">here</a>).</p> 
+</div> 
+<div class="paragraph"> 
+ <p>See also: <a href="index.html#_multiple_web_apps">Multiple web-apps</a>.</p> 
 </div></p>
 
 	<hr />
@@ -162,7 +160,7 @@ The project ProjectA is special. It defines <strong>farm</strong> - logical grou
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

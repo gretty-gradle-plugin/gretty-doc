@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,28 +62,22 @@
 		<h1>Multiple farms</h1>
 	</div>
 
-	<p><div class="paragraph">
-<p>Let&#8217;s suppose, you have more web-apps: ProjectB, ProjectC, ProjectD, ProjectE and you want to start your web-apps in distinct constellations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>ProjectB, ProjectC</p>
-</li>
-<li>
-<p>ProjectB, ProjectC, ProjectD</p>
-</li>
-<li>
-<p>ProjectC, ProjectD, ProjectE</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For this you&#8217;ll need to configure multiple farms:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">farms {
+	<p><div class="paragraph"> 
+ <p>Let’s suppose, you have more web-apps: ProjectB, ProjectC, ProjectD, ProjectE and you want to start your web-apps in distinct constellations:</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p>ProjectB, ProjectC</p> </li> 
+  <li> <p>ProjectB, ProjectC, ProjectD</p> </li> 
+  <li> <p>ProjectC, ProjectD, ProjectE</p> </li> 
+ </ul> 
+</div> 
+<div class="paragraph"> 
+ <p>For this you’ll need to configure multiple farms:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">farms {
   farm {
     webapp ':ProjectB'
     webapp ':ProjectC'
@@ -98,39 +92,34 @@
     webapp ':ProjectD'
     webapp ':ProjectE'
   }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Now you get new sets of gradle tasks, each set specific for particular farm:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>farmRun, farmRunDebug, &#8230;&#8203; serve unnamed farm</p>
-</li>
-<li>
-<p>farmRunXXX, farmRunDebugXXX, &#8230;&#8203; serve farm with name "XXX"</p>
-</li>
-<li>
-<p>farmRunYYY, farmRunDebugYYY, &#8230;&#8203; serve farm with name "YYY"</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-You can even invoke tasks for different farms in parallel, provided that each farm gets distinct set of TCP-ports (see more information on farm TCP-ports <a href="Farm-server-specific-properties.html">here</a>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>See also: <a href="index.html#_multiple_web_apps">Multiple web-apps</a>.</p>
+}</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>Now you get new sets of gradle tasks, each set specific for particular farm:</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p>farmRun, farmRunDebug, …​ serve unnamed farm</p> </li> 
+  <li> <p>farmRunXXX, farmRunDebugXXX, …​ serve farm with name "XXX"</p> </li> 
+  <li> <p>farmRunYYY, farmRunDebugYYY, …​ serve farm with name "YYY"</p> </li> 
+ </ul> 
+</div> 
+<div class="admonitionblock tip"> 
+ <table> 
+  <tbody>
+   <tr> 
+    <td class="icon"> 
+     <div class="title">
+      Tip
+     </div> </td> 
+    <td class="content"> You can even invoke tasks for different farms in parallel, provided that each farm gets distinct set of TCP-ports (see more information on farm TCP-ports <a href="Farm-server-specific-properties.html">here</a>. </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<div class="paragraph"> 
+ <p>See also: <a href="index.html#_multiple_web_apps">Multiple web-apps</a>.</p> 
 </div></p>
 
 	<hr />
@@ -141,7 +130,7 @@ You can even invoke tasks for different farms in parallel, provided that each fa
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

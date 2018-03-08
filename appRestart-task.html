@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,41 +62,40 @@
 		<h1>appRestart task</h1>
 	</div>
 
-	<p><div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>appRestart sends "restart" command to a running servlet-container process.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">gradle appRestart</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>appRestart does not build source code, it only sends "restart" command to localhost:<a href="Gretty-configuration.html#_serviceport">servicePort</a>. Usually
-appRestart is used to restart servlet-container process started by appStart[War][Debug].</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_instantiation_and_extension"><a class="anchor" href="#_instantiation_and_extension"></a>Instantiation and extension</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The object called appRestart is actually an instance of <a href="Gretty-task-classes.html#_apprestarttask">AppRestartTask</a> class, created and configured for you by Gretty. You can instantiate or even extend this class on your own:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'org.akhikhl.gretty'
+	<p><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>appRestart sends "restart" command to a running servlet-container process.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h2> 
+ <div class="sectionbody"> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">gradle appRestart</code></pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>appRestart does not build source code, it only sends "restart" command to localhost:<a href="Gretty-configuration.html#_serviceport">servicePort</a>. Usually appRestart is used to restart servlet-container process started by appStart[War][Debug].</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_instantiation_and_extension"><a class="anchor" href="#_instantiation_and_extension"></a>Instantiation and extension</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>The object called appRestart is actually an instance of <a href="Gretty-task-classes.html#_apprestarttask">AppRestartTask</a> class, created and configured for you by Gretty. You can instantiate or even extend this class on your own:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'org.gretty'
 
 import org.akhikhl.gretty.AppRestartTask
 
@@ -110,13 +109,13 @@ class VerySpecialRestart extends AppRestartTask {
 
 task('MyRestart2', type: VerySpecialRestart) {
   // ...
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If you are going to instantiate or extend this task class yourself, make sure you&#8217;ve learned it&#8217;s properties and methods.</p>
-</div>
-</div>
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>If you are going to instantiate or extend this task class yourself, make sure you’ve learned it’s properties and methods.</p> 
+  </div> 
+ </div> 
 </div></p>
 
 	<hr />
@@ -127,7 +126,7 @@ task('MyRestart2', type: VerySpecialRestart) {
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,62 +62,50 @@
 		<h1>Code coverage support</h1>
 	</div>
 
-	<p><div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Since version 0.0.22 Gretty supports <a href="http://www.eclemma.org/jacoco/index.html">Jacoco</a> instrumentation of web-app projects. The resulting coverage information can be converted to report with the help of standard gradle task <a href="http://www.gradle.org/docs/current/dsl/org.gradle.testing.jacoco.tasks.JacocoReport.html">JacocoReport</a>. Below are the details.</p>
-</div>
-<div class="paragraph">
-<p>Code coverage of web-apps consists of two parts:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Client-side code coverage</strong> covers the code of integration tests (integration tests are typically written with <a href="https://code.google.com/p/spock/">spock</a> + <a href="http://www.gebish.org/">geb</a> or <a href="https://code.google.com/p/spock/">spock</a> + <a href="http://groovy.codehaus.org/modules/http-builder/">HttpBuilder</a>, but actually it can be any JVM code that connects to your web-app).</p>
-</li>
-<li>
-<p><strong>Server-side code coverage</strong> covers the code of the web-app itself.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_client_side_code_coverage"><a class="anchor" href="#_client_side_code_coverage"></a>Client-side code coverage</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Client-side code coverage is not related to Gretty at all. It is activated by applying Jacoco plugin to the given project containing integration tests:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'jacoco'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Side effects of applying Jacoco plugin:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Jacoco plugin adds <a href="http://www.gradle.org/docs/current/dsl/org.gradle.testing.jacoco.plugins.JacocoTaskExtension.html">JacocoTaskExtension</a> to each <a href="http://www.gradle.org/docs/current/javadoc/org/gradle/api/tasks/testing/Test.html">Test</a> task of the given project.</p>
-</li>
-<li>
-<p>Jacoco plugin apppends Jacoco-specific JVM-arguments to each Test task.</p>
-</li>
-<li>
-<p>When Test task runs, Jacoco gathers code coverage to the file <code>"${project.buildDir}/jacoco/${task.name}.exec"</code> ("task.name" is the name of the test task).</p>
-</li>
-<li>
-<p>If you defined JacocoReport task, it creates a report from collected code coverage - html, xml or csv.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Here is the example of client-side code coverage configuration:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'jacoco'
+	<p><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Since version 0.0.22 Gretty supports <a href="http://www.eclemma.org/jacoco/index.html">Jacoco</a> instrumentation of web-app projects. The resulting coverage information can be converted to report with the help of standard gradle task <a href="http://www.gradle.org/docs/current/dsl/org.gradle.testing.jacoco.tasks.JacocoReport.html">JacocoReport</a>. Below are the details.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Code coverage of web-apps consists of two parts:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><strong>Client-side code coverage</strong> covers the code of integration tests (integration tests are typically written with <a href="https://code.google.com/p/spock/">spock</a> + <a href="http://www.gebish.org/">geb</a> or <a href="https://code.google.com/p/spock/">spock</a> + <a href="http://groovy.codehaus.org/modules/http-builder/">HttpBuilder</a>, but actually it can be any JVM code that connects to your web-app).</p> </li> 
+    <li> <p><strong>Server-side code coverage</strong> covers the code of the web-app itself.</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_client_side_code_coverage"><a class="anchor" href="#_client_side_code_coverage"></a>Client-side code coverage</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Client-side code coverage is not related to Gretty at all. It is activated by applying Jacoco plugin to the given project containing integration tests:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'jacoco'</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Side effects of applying Jacoco plugin:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Jacoco plugin adds <a href="http://www.gradle.org/docs/current/dsl/org.gradle.testing.jacoco.plugins.JacocoTaskExtension.html">JacocoTaskExtension</a> to each <a href="http://www.gradle.org/docs/current/javadoc/org/gradle/api/tasks/testing/Test.html">Test</a> task of the given project.</p> </li> 
+    <li> <p>Jacoco plugin apppends Jacoco-specific JVM-arguments to each Test task.</p> </li> 
+    <li> <p>When Test task runs, Jacoco gathers code coverage to the file <code>"${project.buildDir}/jacoco/${task.name}.exec"</code> ("task.name" is the name of the test task).</p> </li> 
+    <li> <p>If you defined JacocoReport task, it creates a report from collected code coverage - html, xml or csv.</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Here is the example of client-side code coverage configuration:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'jacoco'
 
 // ...
 
@@ -151,50 +139,40 @@ task('integrationTestClientReport', type: JacocoReport) {
   doLast {
     println "Jacoco report for client created: file://${reportDir.toURI().path}"
   }
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_server_side_code_coverage"><a class="anchor" href="#_server_side_code_coverage"></a>Server-side code coverage</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Server-side code coverage is implemented by Gretty, using Jacoco plugin and task extensions. It is also activated by applying Jacoco plugin:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'jacoco'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Gretty-specific side effects of applying Jacoco plugin:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Jacoco plugin adds <a href="http://www.gradle.org/docs/current/dsl/org.gradle.testing.jacoco.plugins.JacocoTaskExtension.html">JacocoTaskExtension</a> to each app-start task of the given project - to appRun, appRunDebug, &#8230;&#8203; and, most importantly, to appBeforeIntegrationTest.</p>
-</li>
-<li>
-<p>By default JacocoTaskExtension is enabled for appBeforeIntegrationTest and disabled for all other app-start tasks. Code coverage is not collected for the tasks with disabled JacocoTaskExtension. You can configure this by setting <code>appRun.jacoco.enabled = true</code>.</p>
-</li>
-<li>
-<p>Jacoco plugin apppends Jacoco-specific JVM-arguments to each app-start task.</p>
-</li>
-<li>
-<p>When app-start task runs, Jacoco gathers code coverage to the file <code>"${project.buildDir}/jacoco/${task.name}.exec"</code> ("task.name" is the name of the app-start task).</p>
-</li>
-<li>
-<p>If you define JacocoReport task, it creates a report from collected code coverage - html, xml or csv.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Here is the example of server-side code coverage configuration:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'org.akhikhl.gretty'
+}</code></pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_server_side_code_coverage"><a class="anchor" href="#_server_side_code_coverage"></a>Server-side code coverage</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Server-side code coverage is implemented by Gretty, using Jacoco plugin and task extensions. It is also activated by applying Jacoco plugin:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'jacoco'</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty-specific side effects of applying Jacoco plugin:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Jacoco plugin adds <a href="http://www.gradle.org/docs/current/dsl/org.gradle.testing.jacoco.plugins.JacocoTaskExtension.html">JacocoTaskExtension</a> to each app-start task of the given project - to appRun, appRunDebug, …​ and, most importantly, to appBeforeIntegrationTest.</p> </li> 
+    <li> <p>By default JacocoTaskExtension is enabled for appBeforeIntegrationTest and disabled for all other app-start tasks. Code coverage is not collected for the tasks with disabled JacocoTaskExtension. You can configure this by setting <code>appRun.jacoco.enabled = true</code>.</p> </li> 
+    <li> <p>Jacoco plugin apppends Jacoco-specific JVM-arguments to each app-start task.</p> </li> 
+    <li> <p>When app-start task runs, Jacoco gathers code coverage to the file <code>"${project.buildDir}/jacoco/${task.name}.exec"</code> ("task.name" is the name of the app-start task).</p> </li> 
+    <li> <p>If you define JacocoReport task, it creates a report from collected code coverage - html, xml or csv.</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Here is the example of server-side code coverage configuration:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'org.gretty'
 apply plugin: 'jacoco'
 
 // ...
@@ -225,41 +203,43 @@ task('integrationTestServerReport', type: JacocoReport) {
   doLast {
     println "Jacoco report for server created: file://${reportDir.toURI().path}"
   }
-}</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-You must configure appBeforeIntegrationTest and appAfterIntegrationTest in gretty.afterEvaluate closure: this is because appBeforeIntegrationTest and appAfterIntegrationTest tasks are not yet defined, when the gradle script is processed.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-You cannot pass appBeforeIntegrationTest as a parameter to JacocoReport.executionData for the same reason: it is not yet defined. appBeforeIntegrationTest cannot be wrapped with closure, because internally executionData will pass such closure directly to project.files function and the latter has no idea what to do with task. Wrapping appBeforeIntegrationTest.jacoco.destinationFile with closure will work.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_combining_custom_appbeforeintegrationtesttask_and_appafterintegrationtesttask_with_jacoco"><a class="anchor" href="#_combining_custom_appbeforeintegrationtesttask_and_appafterintegrationtesttask_with_jacoco"></a>Combining custom AppBeforeIntegrationTestTask and AppAfterIntegrationTestTask with jacoco</h3>
-<div class="paragraph">
-<p>If you instantiate AppBeforeIntegrationTestTask and AppAfterIntegrationTestTask classes yourself, enabling server-side code coverage looks basically the same:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">task('myIntegrationTest', type: Test) {
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> 
+       <div class="title">
+        Note
+       </div> </td> 
+      <td class="content"> You must configure appBeforeIntegrationTest and appAfterIntegrationTest in gretty.afterEvaluate closure: this is because appBeforeIntegrationTest and appAfterIntegrationTest tasks are not yet defined, when the gradle script is processed. </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> 
+       <div class="title">
+        Note
+       </div> </td> 
+      <td class="content"> You cannot pass appBeforeIntegrationTest as a parameter to JacocoReport.executionData for the same reason: it is not yet defined. appBeforeIntegrationTest cannot be wrapped with closure, because internally executionData will pass such closure directly to project.files function and the latter has no idea what to do with task. Wrapping appBeforeIntegrationTest.jacoco.destinationFile with closure will work. </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_combining_custom_appbeforeintegrationtesttask_and_appafterintegrationtesttask_with_jacoco"><a class="anchor" href="#_combining_custom_appbeforeintegrationtesttask_and_appafterintegrationtesttask_with_jacoco"></a>Combining custom AppBeforeIntegrationTestTask and AppAfterIntegrationTestTask with jacoco</h3> 
+   <div class="paragraph"> 
+    <p>If you instantiate AppBeforeIntegrationTestTask and AppAfterIntegrationTestTask classes yourself, enabling server-side code coverage looks basically the same:</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">task('myIntegrationTest', type: Test) {
   // ...
 }
 
@@ -290,79 +270,73 @@ task('integrationTestServerReport', type: JacocoReport) {
   doLast {
     System.out.println "Jacoco report for server created: file://${reportDir.toURI().path}"
   }
-}</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-When instantiating AppBeforeIntegrationTestTask and AppAfterIntegrationTestTask classes yourself, you don&#8217;t need to wrap task configuration to gretty.afterEvaluate.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Passing myBeforeIntegrationTest as a parameter to JacocoReport.executionData is now simple: task already exists and Jacoco will correctly extract destinationFile from task&#8217;s Jacoco extension.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-When instantiating AppBeforeIntegrationTestTask and AppAfterIntegrationTestTask classes yourself, you can use many nice features, like debugging, by setting up task properties. See more information in <a href="Gretty-task-classes.html#_appbeforeintegrationtesttask">AppBeforeIntegrationTestTask</a> and <a href="Gretty-task-classes.html#_appafterintegrationtesttask">AppAfterIntegrationTestTask</a> class documentation.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty contains the complete and working examples of Jacoco code coverage:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Code coverage with standard Gretty tasks:<br>
-<a href="https://github.com/akhikhl/gretty/tree/master/examples/jacocoExample" class="bare">https://github.com/akhikhl/gretty/tree/master/examples/jacocoExample</a></p>
-</li>
-<li>
-<p>Code coverage with instantiated Gretty tasks:<br>
-<a href="https://github.com/akhikhl/gretty/tree/master/examples/jacocoInstantiateTasks" class="bare">https://github.com/akhikhl/gretty/tree/master/examples/jacocoInstantiateTasks</a></p>
-</li>
-<li>
-<p>Code coverage with <a href="Multiple-web-apps-introduction.html">multiple web-apps</a>:<br>
-<a href="https://github.com/akhikhl/gretty/tree/master/examples/farmJacoco" class="bare">https://github.com/akhikhl/gretty/tree/master/examples/farmJacoco</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_troubleshooting"><a class="anchor" href="#_troubleshooting"></a>Troubleshooting</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you get exceptions when using combination JDK-8 + Gradle 1.1x + Jacoco + Gretty, you are very likely hitting a problem of compatibility between JDK-8 and earlier versions of Jacoco. See information on how to fix this <a href="Troubleshooting.html#_exceptions_when_using_jacoco_code_coverage_on_jdk_8">here</a>.</p>
-</div>
-</div>
+}</code></pre> 
+    </div> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody>
+      <tr> 
+       <td class="icon"> 
+        <div class="title">
+         Note
+        </div> </td> 
+       <td class="content"> When instantiating AppBeforeIntegrationTestTask and AppAfterIntegrationTestTask classes yourself, you don’t need to wrap task configuration to gretty.afterEvaluate. </td> 
+      </tr> 
+     </tbody>
+    </table> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody>
+      <tr> 
+       <td class="icon"> 
+        <div class="title">
+         Note
+        </div> </td> 
+       <td class="content"> Passing myBeforeIntegrationTest as a parameter to JacocoReport.executionData is now simple: task already exists and Jacoco will correctly extract destinationFile from task’s Jacoco extension. </td> 
+      </tr> 
+     </tbody>
+    </table> 
+   </div> 
+   <div class="admonitionblock tip"> 
+    <table> 
+     <tbody>
+      <tr> 
+       <td class="icon"> 
+        <div class="title">
+         Tip
+        </div> </td> 
+       <td class="content"> When instantiating AppBeforeIntegrationTestTask and AppAfterIntegrationTestTask classes yourself, you can use many nice features, like debugging, by setting up task properties. See more information in <a href="Gretty-task-classes.html#_appbeforeintegrationtesttask">AppBeforeIntegrationTestTask</a> and <a href="Gretty-task-classes.html#_appafterintegrationtesttask">AppAfterIntegrationTestTask</a> class documentation. </td> 
+      </tr> 
+     </tbody>
+    </table> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty contains the complete and working examples of Jacoco code coverage:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Code coverage with standard Gretty tasks:<br> <a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/jacocoExample" class="bare">https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/jacocoExample</a></p> </li> 
+    <li> <p>Code coverage with instantiated Gretty tasks:<br> <a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/jacocoInstantiateTasks" class="bare">https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/jacocoInstantiateTasks</a></p> </li> 
+    <li> <p>Code coverage with <a href="Multiple-web-apps-introduction.html">multiple web-apps</a>:<br> <a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/farmJacoco" class="bare">https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/farmJacoco</a></p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_troubleshooting"><a class="anchor" href="#_troubleshooting"></a>Troubleshooting</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>If you get exceptions when using combination JDK-8 + Gradle 1.1x + Jacoco + Gretty, you are very likely hitting a problem of compatibility between JDK-8 and earlier versions of Jacoco. See information on how to fix this <a href="Troubleshooting.html#_exceptions_when_using_jacoco_code_coverage_on_jdk_8">here</a>.</p> 
+  </div> 
+ </div> 
 </div></p>
 
 	<hr />
@@ -373,7 +347,7 @@ When instantiating AppBeforeIntegrationTestTask and AppAfterIntegrationTestTask 
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

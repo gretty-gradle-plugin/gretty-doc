@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,12 +62,12 @@
 		<h1>Injection of version variables</h1>
 	</div>
 
-	<p><div class="paragraph">
-<p>Gretty version 1.1.5+ automatically injects the following variables into project.ext of your project:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">project.ext {
+	<p><div class="paragraph"> 
+ <p>Gretty version 1.1.5+ automatically injects the following variables into project.ext of your project:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">project.ext {
   grettyVersion = Externalized.getString('grettyVersion')
   jetty7Version = Externalized.getString('jetty7Version')
   jetty7ServletApi = Externalized.getString('jetty7ServletApi')
@@ -84,24 +84,24 @@
   tomcat8Version = Externalized.getString('tomcat8Version')
   tomcat8ServletApi = Externalized.getString('tomcat8ServletApi')
   tomcat8ServletApiVersion = Externalized.getString('tomcat8ServletApiVersion')
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>These variables are always up-to-date and correspond to library versions used by Gretty itself.</p>
-</div>
-<div class="paragraph">
-<p>You can rely on these variables, when adding version-sensitive components, for example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">dependencies {
+}</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>These variables are always up-to-date and correspond to library versions used by Gretty itself.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>You can rely on these variables, when adding version-sensitive components, for example:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">dependencies {
   gretty "org.apache.tomcat:tomcat-dbcp:$tomcat8Version"
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Note that changing the values of version variables is possible, but not recommended. Gretty will ignore such changes and use the versions supplied to Gretty at compile time (of Gretty Gradle plugin).</p>
+}</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>Note that changing the values of version variables is possible, but not recommended. Gretty will ignore such changes and use the versions supplied to Gretty at compile time (of Gretty Gradle plugin).</p> 
 </div></p>
 
 	<hr />
@@ -112,7 +112,7 @@
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

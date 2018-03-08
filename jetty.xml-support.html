@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,85 +62,74 @@
 		<h1>jetty.xml support</h1>
 	</div>
 
-	<p><div class="paragraph">
-<p>"jetty.xml" is the configuration file for Jetty (for server itself, not for web-app).</p>
-</div>
-<div class="paragraph">
-<p>The purpose and syntax of "jetty.xml" is documented in <a href="http://wiki.eclipse.org/Jetty/Reference/jetty.xml">Jetty reference</a>.</p>
-</div>
-<div class="paragraph">
-<p>Gretty recognizes and supports "jetty.xml". As soon as Gretty finds existing "jetty.xml" file, it reads the file and uses it to configure jetty server. Even if "jetty.xml" is not found, Gretty still works.</p>
-</div>
-<div class="paragraph">
-<p>You can (but you don&#8217;t have to) specify "jetty.xml" file via property "serverConfigFile" in Gretty configuration:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">gretty {
+	<p><div class="paragraph"> 
+ <p>"jetty.xml" is the configuration file for Jetty (for server itself, not for web-app).</p> 
+</div> 
+<div class="paragraph"> 
+ <p>The purpose and syntax of "jetty.xml" is documented in <a href="http://wiki.eclipse.org/Jetty/Reference/jetty.xml">Jetty reference</a>.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Gretty recognizes and supports "jetty.xml". As soon as Gretty finds existing "jetty.xml" file, it reads the file and uses it to configure jetty server. Even if "jetty.xml" is not found, Gretty still works.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>You can (but you don’t have to) specify "jetty.xml" file via property "serverConfigFile" in Gretty configuration:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">gretty {
   // ...
   serverConfigFile = 'someFile.xml'
   // ...
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If explicitly defined serverConfigFile represents an absolute path, gretty will use just that.</p>
-</div>
-<div class="paragraph">
-<p>If serverConfigFile is not specified, Gretty looks for one of the files "jetty9.xml" (for Jetty 9), "jetty8.xml" (for Jetty 8), "jetty7.xml" (for Jetty 7), "jetty.xml". Jetty version is defined by <a href="Gretty-configuration.html#_servletcontainer">gretty.servletContainer</a> property.</p>
-</div>
-<div class="paragraph">
-<p>If implicitly or explicitly defined serverConfigFile represents a relative path, gretty tries to resolve it in the following directories:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>"$project.projectDir/jetty"</p>
-</li>
-<li>
-<p>"$project.projectDir/server"</p>
-</li>
-<li>
-<p>"$project.projectDir/config"</p>
-</li>
-<li>
-<p>recursively in the abovementioned folders of the overlay sources (if any)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>When you generate a <a href="Product-generation.html">product</a>, "jetty.xml" file is automatically copied to "conf" subdirectory and referenced in "conf/server.json". The running product automatically applies "jetty.xml" files listed in "conf/server.json".</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Important</div>
-</td>
-<td class="content">
-When you run a farm or generate product from a farm, serverConfigFile is taken from farm or product configuration, not from gretty configuration.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Gretty sources contain example program demonstrating support of "jetty.xml" at work:</p>
-</div>
-<div class="paragraph">
-<p><a href="https://github.com/akhikhl/gretty/tree/master/examples/testJettyServerConfig" class="bare">https://github.com/akhikhl/gretty/tree/master/examples/testJettyServerConfig</a></p>
-</div>
-<div class="paragraph">
-<p>See also:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="jetty-env.xml-support.html">jetty-env.xml support</a></p>
-</li>
-<li>
-<p><a href="Gretty-configuration.html">Gretty configuration</a></p>
-</li>
-</ul>
+}</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>If explicitly defined serverConfigFile represents an absolute path, gretty will use just that.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>If serverConfigFile is not specified, Gretty looks for one of the files "jetty9.xml" (for Jetty 9), "jetty8.xml" (for Jetty 8), "jetty7.xml" (for Jetty 7), "jetty.xml". Jetty version is defined by <a href="Gretty-configuration.html#_servletcontainer">gretty.servletContainer</a> property.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>If implicitly or explicitly defined serverConfigFile represents a relative path, gretty tries to resolve it in the following directories:</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p>"$project.projectDir/jetty"</p> </li> 
+  <li> <p>"$project.projectDir/server"</p> </li> 
+  <li> <p>"$project.projectDir/config"</p> </li> 
+  <li> <p>recursively in the abovementioned folders of the overlay sources (if any)</p> </li> 
+ </ul> 
+</div> 
+<div class="paragraph"> 
+ <p>When you generate a <a href="Product-generation.html">product</a>, "jetty.xml" file is automatically copied to "conf" subdirectory and referenced in "conf/server.json". The running product automatically applies "jetty.xml" files listed in "conf/server.json".</p> 
+</div> 
+<div class="admonitionblock important"> 
+ <table> 
+  <tbody>
+   <tr> 
+    <td class="icon"> 
+     <div class="title">
+      Important
+     </div> </td> 
+    <td class="content"> When you run a farm or generate product from a farm, serverConfigFile is taken from farm or product configuration, not from gretty configuration. </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<div class="paragraph"> 
+ <p>Gretty sources contain example program demonstrating support of "jetty.xml" at work:</p> 
+</div> 
+<div class="paragraph"> 
+ <p><a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/testJettyServerConfig" class="bare">https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/testJettyServerConfig</a></p> 
+</div> 
+<div class="paragraph"> 
+ <p>See also:</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p><a href="jetty-env.xml-support.html">jetty-env.xml support</a></p> </li> 
+  <li> <p><a href="Gretty-configuration.html">Gretty configuration</a></p> </li> 
+ </ul> 
 </div></p>
 
 	<hr />
@@ -151,7 +140,7 @@ When you run a farm or generate product from a farm, serverConfigFile is taken f
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

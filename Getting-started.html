@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,40 +62,40 @@
 		<h1>Getting started</h1>
 	</div>
 
-	<p><div class="paragraph">
-<p>Add the following to "build.gradle" of your web-app:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'war'
-apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>That&#8217;s all! Now you can start your web-app with the command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">gradle appRun</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>you can also use other <a href="Gretty-tasks">Gretty tasks</a> for running and debugging your web-app or <a href="Gretty-configuration.html">configure Gretty</a> to your needs.</p>
-</div>
-<div class="paragraph">
-<p>Alternatively, you can download the script from <a href="https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin" class="bare">https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin</a> to the project folder and include it like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply from: 'gretty.plugin'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>or feel free inserting to your "build.gradle":</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">buildscript {
+	<p><div class="paragraph"> 
+ <p>Add the following to "build.gradle" of your web-app:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'war'
+apply from: 'https://raw.github.com/gretty-gradle-plugin/gretty/master/pluginScripts/gretty.plugin'</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>That’s all! Now you can start your web-app with the command:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">gradle appRun</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>you can also use other <a href="Gretty-tasks">Gretty tasks</a> for running and debugging your web-app or <a href="Gretty-configuration.html">configure Gretty</a> to your needs.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Alternatively, you can download the script from <a href="https://raw.github.com/gretty-gradle-plugin/gretty/master/pluginScripts/gretty.plugin" class="bare">https://raw.github.com/gretty-gradle-plugin/gretty/master/pluginScripts/gretty.plugin</a> to the project folder and include it like this:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply from: 'gretty.plugin'</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>or feel free inserting to your "build.gradle":</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">buildscript {
   repositories {
     jcenter()
     // enable this to use snapshot versions of Gretty:
@@ -103,7 +103,7 @@ apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.p
   }
 
   dependencies {
-    classpath 'org.akhikhl.gretty:gretty:+'
+    classpath 'org.gretty:gretty:+'
   }
 }
 
@@ -113,44 +113,47 @@ repositories {
   // maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local' }
 }
 
-apply plugin: 'org.akhikhl.gretty'</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-All release versions of Gretty are available at jcenter and maven central under the group 'org.akhikhl.gretty'.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Snapshot versions of gretty are available at jfrog artifactory (see code above).
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Important</div>
-</td>
-<td class="content">
-If you experience problems starting Gretty, first look into <a href="Troubleshooting.html">troubleshooting</a> section. If it does not help, raise an issue at <a href="https://github.com/akhikhl/gretty/issues">Gretty issue tracker</a> or <a href="mailto:akhikhl@gmail.com">send an email</a> to Gretty developer.
-</td>
-</tr>
-</table>
+apply plugin: 'org.gretty'</code></pre> 
+ </div> 
+</div> 
+<div class="admonitionblock note"> 
+ <table> 
+  <tbody>
+   <tr> 
+    <td class="icon"> 
+     <div class="title">
+      Note
+     </div> </td> 
+    <td class="content"> All release versions of Gretty are available at jcenter and maven central under the group 'org.gretty'. </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<div class="admonitionblock note"> 
+ <table> 
+  <tbody>
+   <tr> 
+    <td class="icon"> 
+     <div class="title">
+      Note
+     </div> </td> 
+    <td class="content"> Snapshot versions of gretty are available at jfrog artifactory (see code above). </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<div class="admonitionblock important"> 
+ <table> 
+  <tbody>
+   <tr> 
+    <td class="icon"> 
+     <div class="title">
+      Important
+     </div> </td> 
+    <td class="content"> If you experience problems starting Gretty, first look into <a href="Troubleshooting.html">troubleshooting</a> section. If it does not help, raise an issue at <a href="https://github.com/gretty-gradle-plugin/gretty/issues">Gretty issue tracker</a> or <a href="mailto:akhikhl@gmail.com">send an email</a> to Gretty developer. </td> 
+   </tr> 
+  </tbody>
+ </table> 
 </div></p>
 
 	<hr />
@@ -161,7 +164,7 @@ If you experience problems starting Gretty, first look into <a href="Troubleshoo
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

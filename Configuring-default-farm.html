@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,35 +62,31 @@
 		<h1>Configuring default farm</h1>
 	</div>
 
-	<p><div class="paragraph">
-<p>When organizing Gretty farms in real life, you are likely to face two problems:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>web-apps are not subprojects of farm project</p>
-</li>
-<li>
-<p>you do not want all web-apps to be started, only subset of them</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For such cases you&#8217;ll need to define farm configuration. Edit the file "ProjectA/build.gradle", insert code:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">farm {
+	<p><div class="paragraph"> 
+ <p>When organizing Gretty farms in real life, you are likely to face two problems:</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p>web-apps are not subprojects of farm project</p> </li> 
+  <li> <p>you do not want all web-apps to be started, only subset of them</p> </li> 
+ </ul> 
+</div> 
+<div class="paragraph"> 
+ <p>For such cases you’ll need to define farm configuration. Edit the file "ProjectA/build.gradle", insert code:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">farm {
   webapp ':ProjectA'
   webapp ':ProjectB'
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here we define that default farm includes two projects - ProjectA and ProjectB. As soon as we start farm tasks, both projects will run on the same servlet-container with distinct context paths.</p>
-</div>
-<div class="paragraph">
-<p>See also: <a href="index.html#_multiple_web_apps">Multiple web-apps</a>.</p>
+}</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>Here we define that default farm includes two projects - ProjectA and ProjectB. As soon as we start farm tasks, both projects will run on the same servlet-container with distinct context paths.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>See also: <a href="index.html#_multiple_web_apps">Multiple web-apps</a>.</p> 
 </div></p>
 
 	<hr />
@@ -101,7 +97,7 @@
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

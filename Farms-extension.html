@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,15 +62,15 @@
 		<h1>farms extension</h1>
 	</div>
 
-	<p><div class="paragraph">
-<p>When you apply gretty plugin, it adds <strong>farms</strong> extension to the current project.</p>
-</div>
-<div class="paragraph">
-<p>You can (but you don&#8217;t have to) configure farms extension object in your gradle script:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">farms {
+	<p><div class="paragraph"> 
+ <p>When you apply gretty plugin, it adds <strong>farms</strong> extension to the current project.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>You can (but you don’t have to) configure farms extension object in your gradle script:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">farms {
   farm 'XYZ', {
     // ... properties
   }
@@ -78,36 +78,32 @@
     // ... properties
   }
   // ...
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Farms extension object holds map of farm names to farm definitions.</p>
-</div>
-<div class="paragraph">
-<p>Default farm is already included into farm map with empty name.</p>
-</div>
-<div class="paragraph">
-<p>Each named farm defines it&#8217;s own set of farm tasks: farmRunXYZ, farmRunDebugXYZ, etc., where "XYZ" is a farm name.</p>
-</div>
-<div class="paragraph">
-<p>All farm tasks, when invoked on given project, use properties of their farm definition.</p>
-</div>
-<div class="paragraph">
-<p>Each farm consists of two parts:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="Farm-server-specific-properties.html">Farm server-specific properties</a></p>
-</li>
-<li>
-<p><a href="Farm-web-app-list.html">Farm web-app list</a></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>See also: <a href="index.html#_multiple_web_apps">Multiple web-apps</a>.</p>
+}</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>Farms extension object holds map of farm names to farm definitions.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Default farm is already included into farm map with empty name.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Each named farm defines it’s own set of farm tasks: farmRunXYZ, farmRunDebugXYZ, etc., where "XYZ" is a farm name.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>All farm tasks, when invoked on given project, use properties of their farm definition.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Each farm consists of two parts:</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p><a href="Farm-server-specific-properties.html">Farm server-specific properties</a></p> </li> 
+  <li> <p><a href="Farm-web-app-list.html">Farm web-app list</a></p> </li> 
+ </ul> 
+</div> 
+<div class="paragraph"> 
+ <p>See also: <a href="index.html#_multiple_web_apps">Multiple web-apps</a>.</p> 
 </div></p>
 
 	<hr />
@@ -118,7 +114,7 @@
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,94 +62,87 @@
 		<h1>Web-app overlays</h1>
 	</div>
 
-	<p><div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>overlay function of gretty configuration adds the specified project as an <em>overlay source</em> to the current project.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">gretty {
+	<p><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>overlay function of gretty configuration adds the specified project as an <em>overlay source</em> to the current project.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h2> 
+ <div class="sectionbody"> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">gretty {
   // ...
   overlay ':overlay1'
   overlay ':overlay2'
   // ...
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>When performing appRun[Debug] and appStart[Debug], runtime classpath of overlay sources is added to the runtime classpath of the current project. Classpath of the current project has priority.</p>
-</li>
-<li>
-<p>When assembling WAR file, the compiled resources and classes of the overlay sources are added (overlayed) to the current project. The files of the current project have priority over overlay source files. This allows to effectively customize web-app.</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-You can specify more than one overlay source.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-You can specify recursive overlay sources - that is, the projects, added by overlay function, can contain gretty configuration with overlay referencing other projects and so on.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Important</div>
-</td>
-<td class="content">
-"overlay" property "understands" only gradle projects of the same project tree as an input. You can not specify maven artifacts as overlay sources.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Gretty sources contain example programs, demonstrating use of overlays:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/akhikhl/gretty/tree/master/examples/grettyOverlay7">grettyOverlay7</a></p>
-</li>
-<li>
-<p><a href="https://github.com/akhikhl/gretty/tree/master/examples/grettyOverlay8">grettyOverlay8</a></p>
-</li>
-<li>
-<p><a href="https://github.com/akhikhl/gretty/tree/master/examples/grettyOverlay9">grettyOverlay9</a></p>
-</li>
-</ul>
-</div>
-</div>
+}</code></pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2> 
+ <div class="sectionbody"> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>When performing appRun[Debug] and appStart[Debug], runtime classpath of overlay sources is added to the runtime classpath of the current project. Classpath of the current project has priority.</p> </li> 
+    <li> <p>When assembling WAR file, the compiled resources and classes of the overlay sources are added (overlayed) to the current project. The files of the current project have priority over overlay source files. This allows to effectively customize web-app.</p> </li> 
+   </ol> 
+  </div> 
+  <div class="admonitionblock tip"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> 
+       <div class="title">
+        Tip
+       </div> </td> 
+      <td class="content"> You can specify more than one overlay source. </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <div class="admonitionblock tip"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> 
+       <div class="title">
+        Tip
+       </div> </td> 
+      <td class="content"> You can specify recursive overlay sources - that is, the projects, added by overlay function, can contain gretty configuration with overlay referencing other projects and so on. </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <div class="admonitionblock important"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> 
+       <div class="title">
+        Important
+       </div> </td> 
+      <td class="content"> "overlay" property "understands" only gradle projects of the same project tree as an input. You can not specify maven artifacts as overlay sources. </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty sources contain example programs, demonstrating use of overlays:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/grettyOverlay7">grettyOverlay7</a></p> </li> 
+    <li> <p><a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/grettyOverlay8">grettyOverlay8</a></p> </li> 
+    <li> <p><a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/grettyOverlay9">grettyOverlay9</a></p> </li> 
+   </ul> 
+  </div> 
+ </div> 
 </div></p>
 
 	<hr />
@@ -160,7 +153,7 @@ You can specify recursive overlay sources - that is, the projects, added by over
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

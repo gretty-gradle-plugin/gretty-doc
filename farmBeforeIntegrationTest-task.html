@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,45 +62,40 @@
 		<h1>farmBeforeIntegrationTest task</h1>
 	</div>
 
-	<p><div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty automatically invokes this task before <a href="farmIntegrationTest-task.html">farmIntegrationTest task</a>.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-Internal task, please, don&#8217;t invoke it on command line!
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Embedded servlet-container starts in separate java process against the web-apps of given farm and listens for HTTP-requests on <a href="Farm-configuration.html#_port">port</a> (default 8080).</p>
-</li>
-<li>
-<p>Gradle script waits until servlet-container is online.</p>
-</li>
-<li>
-<p>Gradle script proceeds to integration test task.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>See also: <a href="Farm-integration-tests.html">Farm integration tests</a>.</p>
-</div>
-</div>
+	<p><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty automatically invokes this task before <a href="farmIntegrationTest-task.html">farmIntegrationTest task</a>.</p> 
+  </div> 
+  <div class="admonitionblock warning"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> 
+       <div class="title">
+        Warning
+       </div> </td> 
+      <td class="content"> Internal task, please, don’t invoke it on command line! </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2> 
+ <div class="sectionbody"> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>Embedded servlet-container starts in separate java process against the web-apps of given farm and listens for HTTP-requests on <a href="Farm-configuration.html#_port">port</a> (default 8080).</p> </li> 
+    <li> <p>Gradle script waits until servlet-container is online.</p> </li> 
+    <li> <p>Gradle script proceeds to integration test task.</p> </li> 
+   </ol> 
+  </div> 
+  <div class="paragraph"> 
+   <p>See also: <a href="Farm-integration-tests.html">Farm integration tests</a>.</p> 
+  </div> 
+ </div> 
 </div></p>
 
 	<hr />
@@ -111,7 +106,7 @@ Internal task, please, don&#8217;t invoke it on command line!
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

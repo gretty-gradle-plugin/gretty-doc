@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,23 +62,22 @@
 		<h1>Troubleshooting</h1>
 	</div>
 
-	<p><div class="sect1">
-<h2 id="_groovycastexception_while_starting_web_app_with_gretty"><a class="anchor" href="#_groovycastexception_while_starting_web_app_with_gretty"></a>GroovyCastException while starting web-app with Gretty</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Don&#8217;t try to apply from "grettyX-X.plugin" AND define classpath for
-gretty simultaneously:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">// ATTENTION: this script does not work! It contains error!
+	<p><div class="sect1"> 
+ <h2 id="_groovycastexception_while_starting_web_app_with_gretty"><a class="anchor" href="#_groovycastexception_while_starting_web_app_with_gretty"></a>GroovyCastException while starting web-app with Gretty</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Don’t try to apply from "grettyX-X.plugin" AND define classpath for gretty simultaneously:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">// ATTENTION: this script does not work! It contains error!
 buildscript {
   repositories {
     jcenter()
   }
 
   dependencies {
-    classpath 'org.akhikhl.gretty:gretty:+'
+    classpath 'org.gretty:gretty:+'
   }
 }
 
@@ -86,38 +85,38 @@ repositories {
   jcenter()
 }
 
-apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here the following happens: gradle loads gretty-plugin JARs twice, class-loading gets confused and you get exceptions like GroovyCastException.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_exceptions_when_using_jacoco_code_coverage_on_jdk_8"><a class="anchor" href="#_exceptions_when_using_jacoco_code_coverage_on_jdk_8"></a>Exceptions when using Jacoco code coverage on JDK-8</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you get exceptions when using combination JDK-8 + Gradle 1.1x + Jacoco + Gretty, you are very likely hitting a problem of compatibility between JDK-8 and earlier versions of Jacoco. This is fixed by adding the following to your "build.gradle":</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">jacoco {
+apply from: 'https://raw.github.com/gretty-gradle-plugin/gretty/master/pluginScripts/gretty.plugin'</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Here the following happens: gradle loads gretty-plugin JARs twice, class-loading gets confused and you get exceptions like GroovyCastException.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_exceptions_when_using_jacoco_code_coverage_on_jdk_8"><a class="anchor" href="#_exceptions_when_using_jacoco_code_coverage_on_jdk_8"></a>Exceptions when using Jacoco code coverage on JDK-8</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>If you get exceptions when using combination JDK-8 + Gradle 1.1x + Jacoco + Gretty, you are very likely hitting a problem of compatibility between JDK-8 and earlier versions of Jacoco. This is fixed by adding the following to your "build.gradle":</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">jacoco {
   toolVersion = '0.7.1.201405082137'
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>or, if you don&#8217;t want to depend on concrete version of Jacoco and prefer to use the latest available version:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">jacoco {
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>or, if you don’t want to depend on concrete version of Jacoco and prefer to use the latest available version:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">jacoco {
   toolVersion = '+'
-}</code></pre>
-</div>
-</div>
-</div>
+}</code></pre> 
+   </div> 
+  </div> 
+ </div> 
 </div></p>
 
 	<hr />
@@ -128,7 +127,7 @@ apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.p
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

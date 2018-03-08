@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,213 +62,186 @@
 		<h1>Feature overview</h1>
 	</div>
 
-	<p><div id="preamble">
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/gretty_logo.png" alt="gretty logo">
-</div>
-</div>
-<div class="paragraph">
-<p>Gretty is a feature-rich gradle plugin for running web-apps on embedded servlet containers.
-It supports Jetty versions 7, 8 and 9, Tomcat versions 7 and 8, multiple web-apps and many more.
-It wraps servlet container functions as convenient Gradle tasks and configuration DSL.</p>
-</div>
-<div class="paragraph">
-<p>Gretty provides the following features:</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gradle_tasks"><a class="anchor" href="#_gradle_tasks"></a>Gradle tasks</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty provides gradle tasks, which automate starting, stopping, testing and debugging web-apps.
-Tasks work out-of-the-box, without additional configuration, but are fully configurable/customizable.</p>
-</div>
-<div class="paragraph">
-<p>See more information at <a href="Gretty-tasks.html">Gretty tasks</a> and <a href="Farm-tasks.html">Farm tasks</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_spring_boot_support"><a class="anchor" href="#_spring_boot_support"></a>Spring-boot support</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty version 0.0.24+ fully supports <a href="spring-boot-support.html">spring-boot web-apps</a>.
-You can run spring-boot web-apps and "normal" web-apps side-by-side on the same servlet container.
-You can control spring-boot web-apps with the same <a href="Gretty-configuration.html">Gretty configuration</a>
-and apply all Gretty features to them: integration tests, debugging, Jacoco code coverage etc.etc.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_multiple_web_apps_support"><a class="anchor" href="#_multiple_web_apps_support"></a>Multiple web-apps support</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty version 0.0.18+ supports <a href="Multiple-web-apps-introduction.html">multiple web-apps feature</a>:
-it can start arbitrary number of web-apps on the same servlet container.
-Gretty supports web-apps of various types: <a href="Farm-web-app-list.html#_project_web_app_references">gradle projects</a>,
-<a href="Farm-web-app-list.html#_file_based_web_app_references">WAR-files in the file system</a>
-and even <a href="Farm-web-app-list.html#_repository_based_web_app_references">WAR-files from maven dependencies</a>.</p>
-</div>
-<div class="paragraph">
-<p>Multiple web-apps feature works out-of-the-box in <a href="Multiple-web-apps-configureless-setup.html">configureless mode</a>,
-although it is fully <a href="index.html#_multiple_web_apps_configuration">configurable/customizable</a>.</p>
-</div>
-<div class="paragraph">
-<p>Multiple web-apps feature also <a href="Farm-integration-tests.html">works nicely with integration tests</a> and with the debugger.</p>
-</div>
-<div class="paragraph">
-<p>Gretty version 1.1.0+ supports <a href="single-sign-on.html">single sign-on</a> on multiple web-apps (via Jetty and Tomcat realms).</p>
-</div>
-<div class="paragraph">
-<p>Gretty version 1.1.5+ supports <a href="Composite-farms.html">composite farms</a> - farms consisting of other farms.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_switch_between_servlet_container_versions"><a class="anchor" href="#_switch_between_servlet_container_versions"></a>Switch between servlet container versions</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty supports <a href="Switching-between-servlet-containers.html">easy switch</a> between Jetty 7, 8 and 9 and Tomcat 7 and 8.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_product_generation"><a class="anchor" href="#_product_generation"></a>Product generation</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty version 1.1.0+ is able to generate runnable products.
-It works as follows: you invoke "buildProduct" gradle task and Gretty accurately packs
-one or more web-apps with the specified servlet container (tomcat or jetty),
-configuration files and, when needed, with spring boot libraries.
-The generated products are autonomous and self-contained, so they can be deployed
-to vanilla machines without preinstalled servlet container.
-The only requirement to the target machine is the presence of JRE 6/7/8.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_hot_deployment"><a class="anchor" href="#_hot_deployment"></a>Hot deployment</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty support feature of <a href="Hot-deployment.html">Hot deployment</a>:
-When some assets have changed, Gretty automatically reloads your web-app.<br>
-There is <em>cool extension to hot-deployment feature</em> in Gretty since version 0.0.18: Gretty automatically recompiles and then reloads your web-app, as soon as source code files have changed.</p>
-</div>
-<div class="paragraph">
-<p>You can specify that certain folders or files should be <a href="Fast-reload.html">fast-reloaded</a>: that is, when they change, they should not cause web-app restart. Instead, the changed files or folders are simply copied into running web-app.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_web_app_filtering"><a class="anchor" href="#_web_app_filtering"></a>Web-app filtering</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Since version 1.1.2-SNAPSHOT Gretty can <a href="Web-app-filtering.html">filter files in "src/main/webapp"</a> the same way as processResources can filter files in "src/main/resources". Gretty sources contain <a href="https://github.com/akhikhl/gretty/tree/master/examples/filterWebapp">example program</a> demonstrating web-app filtering at work.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_web_app_extra_resource_bases"><a class="anchor" href="#_web_app_extra_resource_bases"></a>Web-app extra resource bases</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Since version 1.1.2-SNAPSHOT Gretty supports <a href="Web-app-extra-resource-bases.html">web-app extra resource bases</a>. It means: additionally to "src/main/webapp" you can specify arbitrary directories that should be served as content of the given web-app. Gretty sources contain <a href="https://github.com/akhikhl/gretty/tree/master/examples/extraResourceBases">example program</a> demonstrating web-app extra resource bases at work.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_web_app_overlays"><a class="anchor" href="#_web_app_overlays"></a>Web-app overlays</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty can generate <a href="Web-app-overlays.html">WAR overlays</a> automatically, each time you build your project.
-Overlays are also fully supported when running inplace (without WAR) and when debugging.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_virtual_web_inf_lib_entries"><a class="anchor" href="#_virtual_web_inf_lib_entries"></a>Virtual WEB-INF/lib entries</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Since version 1.1.3 Gretty supports <a href="Web-app-virtual-webinflibs.html">virtual WEB-INF/lib entries</a>. That is: dependency JARs specified in "build.gradle"/dependencies are mapped "on-the-fly" to WEB-INF/lib directory. As a consequence, ServletContext.getResourcePaths("WEB-INF/lib") returns the expected list of JARs, even if you are starting a web-app "inplace", without assembling WAR-file.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_https_support"><a class="anchor" href="#_https_support"></a>HTTPS support</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Since version 0.0.23 Gretty <a href="HTTPS-support.html">supports HTTPS protocol</a> out-of-the-box. All you have to do is set property <code>httpsEnabled=true</code>. Gretty does all heavy-lifting for you: generates necessary cryptographic key, generates X.509 certificate, configures SSL-connector. Of course, you can fully customize HTTPS protocol via Gretty configuration properties or even via "jetty.xml".</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_debugger_and_integration_tests_support"><a class="anchor" href="#_debugger_and_integration_tests_support"></a>Debugger and integration tests support</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty provides <a href="Debugger-support.html">integration with Java IDE debuggers</a>. You can even debug multiple web-apps loaded into the same servlet container.</p>
-</div>
-<div class="paragraph">
-<p>Gretty <a href="Integration-tests-support.html">supports integration tests</a>: it starts servlet container before integration tests and stop it after.
-Gretty version 0.0.22+ supports <a href="Code-coverage-support.html">Jacoco code coverage</a> of web-app projects - both client-side and server-side.
-The resulting coverage information can be converted to report with the help of standard gradle task
-<a href="http://www.gradle.org/docs/current/dsl/org.gradle.testing.jacoco.tasks.JacocoReport.html">JacocoReport</a>.</p>
-</div>
-<div class="paragraph">
-<p>Gretty version 1.1.5+ supports [override of context path in integration test tasks](<a href="http://akhikhl.github.io/gretty-doc/Override-context-path-in-integration-test-tasks.html" class="bare">http://akhikhl.github.io/gretty-doc/Override-context-path-in-integration-test-tasks.html</a>).</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_injection_of_version_variables"><a class="anchor" href="#_injection_of_version_variables"></a>Injection of version variables</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty version 1.1.5+ automatically injects some <a href="Injection-of-version-variables.html">version variables</a> into project.ext of your project.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_logging_support"><a class="anchor" href="#_logging_support"></a>Logging support</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty provides <a href="Logging.html">Logging</a> out-of-the-box, although it does not force it on your web-app.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_jee_features"><a class="anchor" href="#_jee_features"></a>JEE features</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty supports <a href="JEE-annotations-support.html">JEE annotations</a> out-of-the-box, no effort needed.</p>
-</div>
-<div class="paragraph">
-<p>Gretty supports <a href="Web-fragments-support.html">Web fragments</a>: META-INF/web-fragment.xml and META-INF/resources in dependency libraries - both in inplace and WAR tasks.</p>
-</div>
-<div class="paragraph">
-<p>Gretty version 1.1.7+ implements new feature: <a href="Redirect-filter.html">redirect filter</a>, driven by groovy DSL.
-You can configure and use the redirect filter within any web-application,
-even if you deploy web-application as a WAR file to arbitrary servlet container (without Gretty).</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_jetty_specific_features"><a class="anchor" href="#_jetty_specific_features"></a>Jetty-specific features</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty automatically uses <a href="jetty.xml-support.html">"jetty.xml"</a> and <a href="jetty-env.xml-support.html">"jetty-env.xml"</a>, if they are present.<br>
-Gretty also supports <a href="Jetty-security-realms.html">Jetty security realms</a> out-of-the-box.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_tomcat_specific_features"><a class="anchor" href="#_tomcat_specific_features"></a>Tomcat-specific features</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty automatically uses <a href="tomcat.xml-support.html">"tomcat.xml"</a> and <a href="tomcat-context.xml-support.html">"tomcat-context.xml"</a>, if they are present.<br>
-Gretty also supports <a href="Tomcat-security-realms.html">Tomcat security realms</a> out-of-the-box.</p>
-</div>
-</div>
+	<p><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="https://gretty-gradle-plugin.github.io/gretty-doc/images/gretty_logo.png" alt="gretty logo"> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty is a feature-rich gradle plugin for running web-apps on embedded servlet containers. It supports Jetty versions 7, 8 and 9, Tomcat versions 7 and 8, multiple web-apps and many more. It wraps servlet container functions as convenient Gradle tasks and configuration DSL.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty provides the following features:</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_gradle_tasks"><a class="anchor" href="#_gradle_tasks"></a>Gradle tasks</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty provides gradle tasks, which automate starting, stopping, testing and debugging web-apps. Tasks work out-of-the-box, without additional configuration, but are fully configurable/customizable.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>See more information at <a href="Gretty-tasks.html">Gretty tasks</a> and <a href="Farm-tasks.html">Farm tasks</a>.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_spring_boot_support"><a class="anchor" href="#_spring_boot_support"></a>Spring-boot support</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty version 0.0.24+ fully supports <a href="spring-boot-support.html">spring-boot web-apps</a>. You can run spring-boot web-apps and "normal" web-apps side-by-side on the same servlet container. You can control spring-boot web-apps with the same <a href="Gretty-configuration.html">Gretty configuration</a> and apply all Gretty features to them: integration tests, debugging, Jacoco code coverage etc.etc.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_multiple_web_apps_support"><a class="anchor" href="#_multiple_web_apps_support"></a>Multiple web-apps support</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty version 0.0.18+ supports <a href="Multiple-web-apps-introduction.html">multiple web-apps feature</a>: it can start arbitrary number of web-apps on the same servlet container. Gretty supports web-apps of various types: <a href="Farm-web-app-list.html#_project_web_app_references">gradle projects</a>, <a href="Farm-web-app-list.html#_file_based_web_app_references">WAR-files in the file system</a> and even <a href="Farm-web-app-list.html#_repository_based_web_app_references">WAR-files from maven dependencies</a>.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Multiple web-apps feature works out-of-the-box in <a href="Multiple-web-apps-configureless-setup.html">configureless mode</a>, although it is fully <a href="index.html#_multiple_web_apps_configuration">configurable/customizable</a>.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Multiple web-apps feature also <a href="Farm-integration-tests.html">works nicely with integration tests</a> and with the debugger.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty version 1.1.0+ supports <a href="single-sign-on.html">single sign-on</a> on multiple web-apps (via Jetty and Tomcat realms).</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty version 1.1.5+ supports <a href="Composite-farms.html">composite farms</a> - farms consisting of other farms.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_switch_between_servlet_container_versions"><a class="anchor" href="#_switch_between_servlet_container_versions"></a>Switch between servlet container versions</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty supports <a href="Switching-between-servlet-containers.html">easy switch</a> between Jetty 7, 8 and 9 and Tomcat 7 and 8.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_product_generation"><a class="anchor" href="#_product_generation"></a>Product generation</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty version 1.1.0+ is able to generate runnable products. It works as follows: you invoke "buildProduct" gradle task and Gretty accurately packs one or more web-apps with the specified servlet container (tomcat or jetty), configuration files and, when needed, with spring boot libraries. The generated products are autonomous and self-contained, so they can be deployed to vanilla machines without preinstalled servlet container. The only requirement to the target machine is the presence of JRE 6/7/8.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_hot_deployment"><a class="anchor" href="#_hot_deployment"></a>Hot deployment</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty support feature of <a href="Hot-deployment.html">Hot deployment</a>: When some assets have changed, Gretty automatically reloads your web-app.<br> There is <em>cool extension to hot-deployment feature</em> in Gretty since version 0.0.18: Gretty automatically recompiles and then reloads your web-app, as soon as source code files have changed.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You can specify that certain folders or files should be <a href="Fast-reload.html">fast-reloaded</a>: that is, when they change, they should not cause web-app restart. Instead, the changed files or folders are simply copied into running web-app.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_web_app_filtering"><a class="anchor" href="#_web_app_filtering"></a>Web-app filtering</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Since version 1.1.2-SNAPSHOT Gretty can <a href="Web-app-filtering.html">filter files in "src/main/webapp"</a> the same way as processResources can filter files in "src/main/resources". Gretty sources contain <a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/filterWebapp">example program</a> demonstrating web-app filtering at work.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_web_app_extra_resource_bases"><a class="anchor" href="#_web_app_extra_resource_bases"></a>Web-app extra resource bases</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Since version 1.1.2-SNAPSHOT Gretty supports <a href="Web-app-extra-resource-bases.html">web-app extra resource bases</a>. It means: additionally to "src/main/webapp" you can specify arbitrary directories that should be served as content of the given web-app. Gretty sources contain <a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/extraResourceBases">example program</a> demonstrating web-app extra resource bases at work.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_web_app_overlays"><a class="anchor" href="#_web_app_overlays"></a>Web-app overlays</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty can generate <a href="Web-app-overlays.html">WAR overlays</a> automatically, each time you build your project. Overlays are also fully supported when running inplace (without WAR) and when debugging.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_virtual_web_inf_lib_entries"><a class="anchor" href="#_virtual_web_inf_lib_entries"></a>Virtual WEB-INF/lib entries</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Since version 1.1.3 Gretty supports <a href="Web-app-virtual-webinflibs.html">virtual WEB-INF/lib entries</a>. That is: dependency JARs specified in "build.gradle"/dependencies are mapped "on-the-fly" to WEB-INF/lib directory. As a consequence, ServletContext.getResourcePaths("WEB-INF/lib") returns the expected list of JARs, even if you are starting a web-app "inplace", without assembling WAR-file.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_https_support"><a class="anchor" href="#_https_support"></a>HTTPS support</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Since version 0.0.23 Gretty <a href="HTTPS-support.html">supports HTTPS protocol</a> out-of-the-box. All you have to do is set property <code>httpsEnabled=true</code>. Gretty does all heavy-lifting for you: generates necessary cryptographic key, generates X.509 certificate, configures SSL-connector. Of course, you can fully customize HTTPS protocol via Gretty configuration properties or even via "jetty.xml".</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_debugger_and_integration_tests_support"><a class="anchor" href="#_debugger_and_integration_tests_support"></a>Debugger and integration tests support</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty provides <a href="Debugger-support.html">integration with Java IDE debuggers</a>. You can even debug multiple web-apps loaded into the same servlet container.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty <a href="Integration-tests-support.html">supports integration tests</a>: it starts servlet container before integration tests and stop it after. Gretty version 0.0.22+ supports <a href="Code-coverage-support.html">Jacoco code coverage</a> of web-app projects - both client-side and server-side. The resulting coverage information can be converted to report with the help of standard gradle task <a href="https://www.gradle.org/docs/current/dsl/org.gradle.testing.jacoco.tasks.JacocoReport.html">JacocoReport</a>.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty version 1.1.5+ supports [override of context path in integration test tasks](<a href="https://gretty-gradle-plugin.github.io/gretty-doc/Override-context-path-in-integration-test-tasks.html" class="bare">https://gretty-gradle-plugin.github.io/gretty-doc/Override-context-path-in-integration-test-tasks.html</a>).</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_injection_of_version_variables"><a class="anchor" href="#_injection_of_version_variables"></a>Injection of version variables</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty version 1.1.5+ automatically injects some <a href="Injection-of-version-variables.html">version variables</a> into project.ext of your project.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_logging_support"><a class="anchor" href="#_logging_support"></a>Logging support</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty provides <a href="Logging.html">Logging</a> out-of-the-box, although it does not force it on your web-app.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_jee_features"><a class="anchor" href="#_jee_features"></a>JEE features</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty supports <a href="JEE-annotations-support.html">JEE annotations</a> out-of-the-box, no effort needed.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty supports <a href="Web-fragments-support.html">Web fragments</a>: META-INF/web-fragment.xml and META-INF/resources in dependency libraries - both in inplace and WAR tasks.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty version 1.1.7+ implements new feature: <a href="Redirect-filter.html">redirect filter</a>, driven by groovy DSL. You can configure and use the redirect filter within any web-application, even if you deploy web-application as a WAR file to arbitrary servlet container (without Gretty).</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_jetty_specific_features"><a class="anchor" href="#_jetty_specific_features"></a>Jetty-specific features</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty automatically uses <a href="jetty.xml-support.html">"jetty.xml"</a> and <a href="jetty-env.xml-support.html">"jetty-env.xml"</a>, if they are present.<br> Gretty also supports <a href="Jetty-security-realms.html">Jetty security realms</a> out-of-the-box.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_tomcat_specific_features"><a class="anchor" href="#_tomcat_specific_features"></a>Tomcat-specific features</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty automatically uses <a href="tomcat.xml-support.html">"tomcat.xml"</a> and <a href="tomcat-context.xml-support.html">"tomcat-context.xml"</a>, if they are present.<br> Gretty also supports <a href="Tomcat-security-realms.html">Tomcat security realms</a> out-of-the-box.</p> 
+  </div> 
+ </div> 
 </div></p>
 
 	<hr />
@@ -279,7 +252,7 @@ Gretty also supports <a href="Tomcat-security-realms.html">Tomcat security realm
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

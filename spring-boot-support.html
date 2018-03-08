@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,31 +62,28 @@
 		<h1>Spring Boot support</h1>
 	</div>
 
-	<p><div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Since version 0.0.24 Gretty supports Spring Boot web-apps out-of-the-box.
-All Gretty features, including (but not limited to) debugging,
-code coverage and integration tests, also apply to spring-boot web-apps.
-See more information below.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_simplest_gretty_setup_with_spring_boot"><a class="anchor" href="#_simplest_gretty_setup_with_spring_boot"></a>Simplest Gretty setup with Spring Boot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Add the following code to "build.gradle":</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">buildscript {
+	<p><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Since version 0.0.24 Gretty supports Spring Boot web-apps out-of-the-box. All Gretty features, including (but not limited to) debugging, code coverage and integration tests, also apply to spring-boot web-apps. See more information below.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_simplest_gretty_setup_with_spring_boot"><a class="anchor" href="#_simplest_gretty_setup_with_spring_boot"></a>Simplest Gretty setup with Spring Boot</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Add the following code to "build.gradle":</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">buildscript {
   repositories {
     jcenter()
   }
 
   dependencies {
-    classpath 'org.akhikhl.gretty:gretty:+'
+    classpath 'org.gretty:gretty:+'
   }
 }
 
@@ -98,40 +95,38 @@ repositories {
 
 gretty {
   springBoot = true
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Now you can run your Spring Boot application with the command <code>gradle appRun</code>.</p>
-</div>
-<div class="paragraph">
-<p>The complete sources for the simplest Gretty Spring Boot setup:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/akhikhl/gretty/tree/master/examples/spring-boot-simple">spring-boot-simple</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_running_on_specific_version_of_spring_boot"><a class="anchor" href="#_running_on_specific_version_of_spring_boot"></a>Running on specific version of spring boot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Add the following code to "build.gradle":</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">buildscript {
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Now you can run your Spring Boot application with the command <code>gradle appRun</code>.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The complete sources for the simplest Gretty Spring Boot setup:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/spring-boot-simple">spring-boot-simple</a></p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_running_on_specific_version_of_spring_boot"><a class="anchor" href="#_running_on_specific_version_of_spring_boot"></a>Running on specific version of spring boot</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Add the following code to "build.gradle":</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">buildscript {
   repositories {
     jcenter()
     maven { url 'http://repo.spring.io/release' }
   }
 
   dependencies {
-    classpath 'org.akhikhl.gretty:gretty:+'
+    classpath 'org.gretty:gretty:+'
   }
 }
 
@@ -145,129 +140,122 @@ repositories {
 gretty {
   springBoot = true
   springBootVersion = '1.1.7.RELEASE'
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Note that spring-boot versions prior to 1.1.0 are not supported by Gretty and may produce compile-time or runtime errors.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gretty_configuration_and_spring_boot"><a class="anchor" href="#_gretty_configuration_and_spring_boot"></a>Gretty configuration and Spring Boot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty configuration also applies to spring-boot projects. You can set properties like "contextPath", "port", etc. etc. - they all
-will be passed to the servlet container and web-app.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gretty_tasks_and_spring_boot"><a class="anchor" href="#_gretty_tasks_and_spring_boot"></a>Gretty tasks and Spring Boot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty plugin implements all gretty tasks for spring-boot projects.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gretty_hot_deployment_and_spring_boot"><a class="anchor" href="#_gretty_hot_deployment_and_spring_boot"></a>Gretty hot-deployment and Spring Boot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty uses <a href="https://github.com/spring-projects/spring-loaded">spring-loaded</a> library for smooth reload
-of running Spring Boot applications. As soon as you change the sources, the project gets
-automatically recompiled and web-app reloads with updated classes.</p>
-</div>
-<div class="paragraph">
-<p>Gretty also supports <a href="Fast-reload.html">Fast reload</a> feature with Spring Boot web-apps.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gretty_webapp_overlays_and_spring_boot"><a class="anchor" href="#_gretty_webapp_overlays_and_spring_boot"></a>Gretty webapp-overlays and Spring Boot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Webapp-overlays are technically possible with Gretty and Spring Boot, but author of Gretty plugin
-did not test this feature yet. See more information in <a href="Web-app-overlays.html">Web-app overlays</a> section.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gretty_https_support_and_spring_boot"><a class="anchor" href="#_gretty_https_support_and_spring_boot"></a>Gretty HTTPS support and Spring Boot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty fully supports <a href="HTTPS-support.html">HTTPS</a> with Spring Boot web-apps.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gretty_debugging_testing_logging_and_spring_boot"><a class="anchor" href="#_gretty_debugging_testing_logging_and_spring_boot"></a>Gretty debugging, testing, logging and Spring Boot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty fully supports <a href="Debugger-support.html">debugging</a> of Spring Boot web-apps.</p>
-</div>
-<div class="paragraph">
-<p>Gretty fully supports <a href="Integration-tests-support.html">integration tests</a> with Spring Boot web-apps.</p>
-</div>
-<div class="paragraph">
-<p>Gretty fully supports <a href="Code-coverage-support.html">Jacoco code coverage</a> with Spring Boot web-apps.</p>
-</div>
-<div class="paragraph">
-<p>Gretty fully supports <a href="Logging.html">logging</a> of Spring Boot web-apps.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gretty_jetty_specific_features_and_spring_boot"><a class="anchor" href="#_gretty_jetty_specific_features_and_spring_boot"></a>Gretty Jetty-specific features and Spring Boot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty fully supports <a href="Jetty-security-realms.html">Jetty security realms</a> with Spring Boot web-apps.</p>
-</div>
-<div class="paragraph">
-<p>Gretty fully supports <a href="jetty.xml-support.html">jetty.xml</a> with Spring Boot web-apps.</p>
-</div>
-<div class="paragraph">
-<p>Gretty fully supports <a href="jetty-env.xml-support.html">jetty-env.xml</a> with Spring Boot web-apps.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gretty_tomcat_specific_features_and_spring_boot"><a class="anchor" href="#_gretty_tomcat_specific_features_and_spring_boot"></a>Gretty Tomcat-specific features and Spring Boot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty fully supports <a href="Tomcat-security-realms.html">Tomcat security realms</a> with Spring Boot web-apps.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gretty_multiple_web_apps_and_spring_boot"><a class="anchor" href="#_gretty_multiple_web_apps_and_spring_boot"></a>Gretty multiple web-apps and Spring Boot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty supports running multiple web-apps on so-called <a href="Multiple-web-apps-introduction.html">farms</a>.
-Web-apps can be Spring Boot or "normal", in any combinations - Gretty will sort them out.</p>
-</div>
-<div class="paragraph">
-<p>Gretty contains example program, showing multi-web-app setup with Spring Boot:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/akhikhl/gretty/tree/master/examples/spring-boot-farm">spring-boot-farm</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_servlet_container_versions_and_spring_boot"><a class="anchor" href="#_servlet_container_versions_and_spring_boot"></a>Servlet container versions and Spring Boot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Gretty supports running Spring Boot web-apps on Jetty 8/9 and Tomcat 7/8. Running Spring Boot on Jetty 7 is not supported, since Jetty 7 uses older servlet API not compatible with Spring Boot.</p>
-</div>
-<div class="paragraph">
-<p>The servlet container for Spring Boot web-apps is selected via <a href="Gretty-configuration.html#_servletcontainer">servletContainer</a> property of Gretty configuration.</p>
-</div>
-</div>
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Note that spring-boot versions prior to 1.1.0 are not supported by Gretty and may produce compile-time or runtime errors.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_gretty_configuration_and_spring_boot"><a class="anchor" href="#_gretty_configuration_and_spring_boot"></a>Gretty configuration and Spring Boot</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty configuration also applies to spring-boot projects. You can set properties like "contextPath", "port", etc. etc. - they all will be passed to the servlet container and web-app.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_gretty_tasks_and_spring_boot"><a class="anchor" href="#_gretty_tasks_and_spring_boot"></a>Gretty tasks and Spring Boot</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty plugin implements all gretty tasks for spring-boot projects.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_gretty_hot_deployment_and_spring_boot"><a class="anchor" href="#_gretty_hot_deployment_and_spring_boot"></a>Gretty hot-deployment and Spring Boot</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty uses <a href="https://github.com/spring-projects/spring-loaded">spring-loaded</a> library for smooth reload of running Spring Boot applications. As soon as you change the sources, the project gets automatically recompiled and web-app reloads with updated classes.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty also supports <a href="Fast-reload.html">Fast reload</a> feature with Spring Boot web-apps.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_gretty_webapp_overlays_and_spring_boot"><a class="anchor" href="#_gretty_webapp_overlays_and_spring_boot"></a>Gretty webapp-overlays and Spring Boot</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Webapp-overlays are technically possible with Gretty and Spring Boot, but author of Gretty plugin did not test this feature yet. See more information in <a href="Web-app-overlays.html">Web-app overlays</a> section.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_gretty_https_support_and_spring_boot"><a class="anchor" href="#_gretty_https_support_and_spring_boot"></a>Gretty HTTPS support and Spring Boot</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty fully supports <a href="HTTPS-support.html">HTTPS</a> with Spring Boot web-apps.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_gretty_debugging_testing_logging_and_spring_boot"><a class="anchor" href="#_gretty_debugging_testing_logging_and_spring_boot"></a>Gretty debugging, testing, logging and Spring Boot</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty fully supports <a href="Debugger-support.html">debugging</a> of Spring Boot web-apps.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty fully supports <a href="Integration-tests-support.html">integration tests</a> with Spring Boot web-apps.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty fully supports <a href="Code-coverage-support.html">Jacoco code coverage</a> with Spring Boot web-apps.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty fully supports <a href="Logging.html">logging</a> of Spring Boot web-apps.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_gretty_jetty_specific_features_and_spring_boot"><a class="anchor" href="#_gretty_jetty_specific_features_and_spring_boot"></a>Gretty Jetty-specific features and Spring Boot</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty fully supports <a href="Jetty-security-realms.html">Jetty security realms</a> with Spring Boot web-apps.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty fully supports <a href="jetty.xml-support.html">jetty.xml</a> with Spring Boot web-apps.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty fully supports <a href="jetty-env.xml-support.html">jetty-env.xml</a> with Spring Boot web-apps.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_gretty_tomcat_specific_features_and_spring_boot"><a class="anchor" href="#_gretty_tomcat_specific_features_and_spring_boot"></a>Gretty Tomcat-specific features and Spring Boot</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty fully supports <a href="Tomcat-security-realms.html">Tomcat security realms</a> with Spring Boot web-apps.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_gretty_multiple_web_apps_and_spring_boot"><a class="anchor" href="#_gretty_multiple_web_apps_and_spring_boot"></a>Gretty multiple web-apps and Spring Boot</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty supports running multiple web-apps on so-called <a href="Multiple-web-apps-introduction.html">farms</a>. Web-apps can be Spring Boot or "normal", in any combinations - Gretty will sort them out.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gretty contains example program, showing multi-web-app setup with Spring Boot:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/spring-boot-farm">spring-boot-farm</a></p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_servlet_container_versions_and_spring_boot"><a class="anchor" href="#_servlet_container_versions_and_spring_boot"></a>Servlet container versions and Spring Boot</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Gretty supports running Spring Boot web-apps on Jetty 8/9 and Tomcat 7/8. Running Spring Boot on Jetty 7 is not supported, since Jetty 7 uses older servlet API not compatible with Spring Boot.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The servlet container for Spring Boot web-apps is selected via <a href="Gretty-configuration.html#_servletcontainer">servletContainer</a> property of Gretty configuration.</p> 
+  </div> 
+ </div> 
 </div></p>
 
 	<hr />
@@ -278,7 +266,7 @@ Web-apps can be Spring Boot or "normal", in any combinations - Gretty will sort 
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

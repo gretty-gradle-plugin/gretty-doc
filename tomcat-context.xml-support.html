@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,73 +62,63 @@
 		<h1>tomcat-context.xml support</h1>
 	</div>
 
-	<p><div class="paragraph">
-<p>"tomcat-context.xml" is an optional Tomcat file that configures individual web-app.</p>
-</div>
-<div class="paragraph">
-<p>The purpose and syntax of "tomcat-context.xml" is documented at <a href="http://tomcat.apache.org/tomcat-8.0-doc/config/context.html">Tomcat reference</a>.</p>
-</div>
-<div class="paragraph">
-<p>Gretty recognizes and supports "tomcat-context.xml". As soon as Gretty finds existing "tomcat-context.xml" file, it reads the file and uses it to configure tomcat web-app. Even if "tomcat-context.xml" is not found, Gretty still works.</p>
-</div>
-<div class="paragraph">
-<p>By convension Gretty looks for the file name "tomcat-context.xml". You can (but you don&#8217;t have to) change the file name by specifying property "contextConfigFile" in Gretty configuration:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">gretty {
+	<p><div class="paragraph"> 
+ <p>"tomcat-context.xml" is an optional Tomcat file that configures individual web-app.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>The purpose and syntax of "tomcat-context.xml" is documented at <a href="http://tomcat.apache.org/tomcat-8.0-doc/config/context.html">Tomcat reference</a>.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Gretty recognizes and supports "tomcat-context.xml". As soon as Gretty finds existing "tomcat-context.xml" file, it reads the file and uses it to configure tomcat web-app. Even if "tomcat-context.xml" is not found, Gretty still works.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>By convension Gretty looks for the file name "tomcat-context.xml". You can (but you don’t have to) change the file name by specifying property "contextConfigFile" in Gretty configuration:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">gretty {
   // ...
   contextConfigFile = 'someFile.xml'
   // ...
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If contextConfigFile is not specified, Gretty looks for one of the files: "tomcat8-context.xml" (for Tomcat 8), "tomcat7-context.xml" (for Tomcat 7), "tomcat-context.xml", "context.xml" in the directory "$project.webAppDir/META-INF". Tomcat version is defined by <a href="Gretty-configuration.html#_servletcontainer">gretty.servletContainer</a> property.</p>
-</div>
-<div class="paragraph">
-<p>If explicitly defined contextConfigFile represents an absolute path, gretty will use just that.</p>
-</div>
-<div class="paragraph">
-<p>If explicitly defined contextConfigFile represents a relative path, gretty tries to resolve it in the following directories:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>"$project.projectDir/webapp-tomcat"</p>
-</li>
-<li>
-<p>"$project.projectDir/webapp-config"</p>
-</li>
-<li>
-<p>recursively in the abovementioned folders of the overlay sources (if any)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>When you generate a <a href="Product-generation.html">product</a> and "tomcat-context.xml" resides within "$project.webAppDir/META-INF", it is packed to the WAR-file. The running product automatically finds and applies "META-INF/tomcat-context.xml" of each included web-app.</p>
-</div>
-<div class="paragraph">
-<p>When you generate a <a href="Product-generation.html">product</a> and "tomcat-context.xml" resides within "webapp-tomcat" or "webapp-config", the file is copied to subdirectory "conf/$projectName" and referenced in "conf/server.json". The running product automatically applies "tomcat-context.xml" files listed in "conf/server.json".</p>
-</div>
-<div class="paragraph">
-<p>Gretty sources contain example programs demonstrating support of "tomcat-context.xml" at work:</p>
-</div>
-<div class="paragraph">
-<p><a href="https://github.com/akhikhl/gretty/tree/master/examples/testTomcatContextConfig" class="bare">https://github.com/akhikhl/gretty/tree/master/examples/testTomcatContextConfig</a></p>
-</div>
-<div class="paragraph">
-<p>See also:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="tomcat.xml-support.html">tomcat.xml support</a></p>
-</li>
-<li>
-<p><a href="Gretty-configuration.html">Gretty configuration</a></p>
-</li>
-</ul>
+}</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>If contextConfigFile is not specified, Gretty looks for one of the files: "tomcat8-context.xml" (for Tomcat 8), "tomcat7-context.xml" (for Tomcat 7), "tomcat-context.xml", "context.xml" in the directory "$project.webAppDir/META-INF". Tomcat version is defined by <a href="Gretty-configuration.html#_servletcontainer">gretty.servletContainer</a> property.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>If explicitly defined contextConfigFile represents an absolute path, gretty will use just that.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>If explicitly defined contextConfigFile represents a relative path, gretty tries to resolve it in the following directories:</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p>"$project.projectDir/webapp-tomcat"</p> </li> 
+  <li> <p>"$project.projectDir/webapp-config"</p> </li> 
+  <li> <p>recursively in the abovementioned folders of the overlay sources (if any)</p> </li> 
+ </ul> 
+</div> 
+<div class="paragraph"> 
+ <p>When you generate a <a href="Product-generation.html">product</a> and "tomcat-context.xml" resides within "$project.webAppDir/META-INF", it is packed to the WAR-file. The running product automatically finds and applies "META-INF/tomcat-context.xml" of each included web-app.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>When you generate a <a href="Product-generation.html">product</a> and "tomcat-context.xml" resides within "webapp-tomcat" or "webapp-config", the file is copied to subdirectory "conf/$projectName" and referenced in "conf/server.json". The running product automatically applies "tomcat-context.xml" files listed in "conf/server.json".</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Gretty sources contain example programs demonstrating support of "tomcat-context.xml" at work:</p> 
+</div> 
+<div class="paragraph"> 
+ <p><a href="https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/testTomcatContextConfig" class="bare">https://github.com/gretty-gradle-plugin/gretty/tree/master/examples/testTomcatContextConfig</a></p> 
+</div> 
+<div class="paragraph"> 
+ <p>See also:</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p><a href="tomcat.xml-support.html">tomcat.xml support</a></p> </li> 
+  <li> <p><a href="Gretty-configuration.html">Gretty configuration</a></p> </li> 
+ </ul> 
 </div></p>
 
 	<hr />
@@ -139,7 +129,7 @@
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

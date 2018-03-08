@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,65 +62,52 @@
 		<h1>appStartDebug task</h1>
 	</div>
 
-	<p><div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>appStartDebug starts web-app inplace, in debug mode.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">gradle appStartDebug</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The web-app gets compiled (if it&#8217;s not up-to-date).</p>
-</li>
-<li>
-<p>Embedded servlet-container starts in separate java process against compiled
-classes and their dependencies.<br>
-<strong>important</strong>: Upon start, the process is in suspended-mode and listens for debugger commands on port 5005.</p>
-</li>
-<li>
-<p>Upon resume, servlet-container process starts listening for HTTP-requests on
-<a href="Gretty-configuration.html#_port">port</a> (default 8080).</p>
-</li>
-<li>
-<p>Gretty waits for servlet-container process to complete.</p>
-</li>
-<li>
-<p>Gradle script continues normal execution of tasks.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Note that this task does not depend on "war" task, nor does it use WAR-file.</p>
-</div>
-<div class="paragraph">
-<p>Note that this task does not stop servlet-container. It is assumed that another gradle process stops it, supposedly gradle appStop.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_instantiation_and_extension"><a class="anchor" href="#_instantiation_and_extension"></a>Instantiation and extension</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The object called appStartDebug is actually an instance of <a href="Gretty-task-classes.html#_appstarttask">AppStartTask</a> class, created and configured for you by Gretty. You can instantiate or even extend this class on your own:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'org.akhikhl.gretty'
+	<p><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>appStartDebug starts web-app inplace, in debug mode.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h2> 
+ <div class="sectionbody"> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">gradle appStartDebug</code></pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2> 
+ <div class="sectionbody"> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>The web-app gets compiled (if it’s not up-to-date).</p> </li> 
+    <li> <p>Embedded servlet-container starts in separate java process against compiled classes and their dependencies.<br> <strong>important</strong>: Upon start, the process is in suspended-mode and listens for debugger commands on port 5005.</p> </li> 
+    <li> <p>Upon resume, servlet-container process starts listening for HTTP-requests on <a href="Gretty-configuration.html#_port">port</a> (default 8080).</p> </li> 
+    <li> <p>Gretty waits for servlet-container process to complete.</p> </li> 
+    <li> <p>Gradle script continues normal execution of tasks.</p> </li> 
+   </ol> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Note that this task does not depend on "war" task, nor does it use WAR-file.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Note that this task does not stop servlet-container. It is assumed that another gradle process stops it, supposedly gradle appStop.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_instantiation_and_extension"><a class="anchor" href="#_instantiation_and_extension"></a>Instantiation and extension</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>The object called appStartDebug is actually an instance of <a href="Gretty-task-classes.html#_appstarttask">AppStartTask</a> class, created and configured for you by Gretty. You can instantiate or even extend this class on your own:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">apply plugin: 'org.gretty'
 
 import org.akhikhl.gretty.AppStartTask
 
@@ -134,26 +121,26 @@ class VerySpecialRun extends AppStartTask {
 
 task('MyRun2', type: VerySpecialRun) {
   // ...
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If you are going to instantiate or extend this task class yourself, make sure you&#8217;ve learned it&#8217;s properties and methods.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_workflow"><a class="anchor" href="#_workflow"></a>Workflow</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/appStartDebug_StateDiagram.svg" alt="appStartDebug StateDiagram">
-</div>
-</div>
-<div class="paragraph">
-<p>See also: <a href="appStop-task.html">appStop task</a>, <a href="appRestart-task.html">appRestart task</a>, <a href="Debugger-support.html">Debugger support</a>.</p>
-</div>
-</div>
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>If you are going to instantiate or extend this task class yourself, make sure you’ve learned it’s properties and methods.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_workflow"><a class="anchor" href="#_workflow"></a>Workflow</h2> 
+ <div class="sectionbody"> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="https://gretty-gradle-plugin.github.io/gretty-doc/images/appStartDebug_StateDiagram.svg" alt="appStartDebug StateDiagram"> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>See also: <a href="appStop-task.html">appStop task</a>, <a href="appRestart-task.html">appRestart task</a>, <a href="Debugger-support.html">Debugger support</a>.</p> 
+  </div> 
+ </div> 
 </div></p>
 
 	<hr />
@@ -164,7 +151,7 @@ task('MyRun2', type: VerySpecialRun) {
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     

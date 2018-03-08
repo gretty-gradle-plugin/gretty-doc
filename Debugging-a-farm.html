@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="Feature-overview.html">Feature overview</a></li>
-            <li><a href="https://github.com/akhikhl/gretty">Sources</a></li>
+            <li><a href="https://github.com/gretty-gradle-plugin/gretty">Sources</a></li>
             <li><a href="Troubleshooting.html">Troubleshooting</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -62,38 +62,40 @@
 		<h1>Debugging a farm</h1>
 	</div>
 
-	<p><div class="paragraph">
-<p>Gretty supports debugging a farm with a set of special gradle tasks: farmRunDebug, farmRunWarDebug, farmStartDebug, farmStartWarDebug.</p>
-</div>
-<div class="paragraph">
-<p>When you invoke one of the debugging tasks, a farm starts servlet-container with all farm web-apps, in suspended mode, and waits for debugger commands on port 5005.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Author of Gretty plugin tested farm debugging under Netbeans IDE. In principle, it should work under other Java IDEs as well, but it&#8217;s not tested yet.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Important</div>
-</td>
-<td class="content">
-The project, containing a farm, must be a JVM project (Java, Groovy, etc.), otherwise IDE does not send debugging commands to the debugged JVM process over port 5005. This requirement is easily fulfilled, when you define a farm in one of the web-apps.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>See also: <a href="index.html#_multiple_web_apps">Multiple web-apps</a>.</p>
+	<p><div class="paragraph"> 
+ <p>Gretty supports debugging a farm with a set of special gradle tasks: farmRunDebug, farmRunWarDebug, farmStartDebug, farmStartWarDebug.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>When you invoke one of the debugging tasks, a farm starts servlet-container with all farm web-apps, in suspended mode, and waits for debugger commands on port 5005.</p> 
+</div> 
+<div class="admonitionblock note"> 
+ <table> 
+  <tbody>
+   <tr> 
+    <td class="icon"> 
+     <div class="title">
+      Note
+     </div> </td> 
+    <td class="content"> Author of Gretty plugin tested farm debugging under Netbeans IDE. In principle, it should work under other Java IDEs as well, but it’s not tested yet. </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<div class="admonitionblock important"> 
+ <table> 
+  <tbody>
+   <tr> 
+    <td class="icon"> 
+     <div class="title">
+      Important
+     </div> </td> 
+    <td class="content"> The project, containing a farm, must be a JVM project (Java, Groovy, etc.), otherwise IDE does not send debugging commands to the debugged JVM process over port 5005. This requirement is easily fulfilled, when you define a farm in one of the web-apps. </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<div class="paragraph"> 
+ <p>See also: <a href="index.html#_multiple_web_apps">Multiple web-apps</a>.</p> 
 </div></p>
 
 	<hr />
@@ -104,7 +106,7 @@ The project, containing a farm, must be a JVM project (Java, Groovy, etc.), othe
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
       </div>
     </div>
     
