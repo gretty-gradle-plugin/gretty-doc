@@ -26,7 +26,7 @@ buildscript {
   }
 }
 
-apply plugin: 'gretty'
+apply plugin: 'org.gretty'
 
 repositories {
   jcenter()
@@ -60,7 +60,7 @@ buildscript {
   }
 }
 
-apply plugin: 'gretty'
+apply plugin: 'org.gretty'
 
 repositories {
   jcenter()
