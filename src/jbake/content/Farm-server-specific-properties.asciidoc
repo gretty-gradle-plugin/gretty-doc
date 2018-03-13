@@ -10,11 +10,11 @@ Farm configuration defines it's own set of server-specific properties. When you 
 [source,groovy]
 ----
 gretty {
-  port = 8181
+  httpPort = 8181
 }
 
 farm {
-  port = 9191
+  httpPort = 9191
   webapp project
 }
 ----

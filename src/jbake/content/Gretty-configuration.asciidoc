@@ -12,7 +12,7 @@ with the help of gretty DSL:
 [source,groovy]
 ----
 gretty {
-  port = 8081
+  httpPort = 8081
   contextPath = '/MyWebApp'
   // ... many more properties
 }

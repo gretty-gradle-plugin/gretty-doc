@@ -18,12 +18,12 @@ Example:
 ----
 farms {
   farm 'A', { 
-    port = 8081
+    httpPort = 8081
     webapp ':ProjectA'
     webapp ':ProjectB', contextPath: '/aaa', inplace: false
   }
   farm 'A', { 
-    port = 8082
+    httpPort = 8082
     webapp ':ProjectB', contextPath: '/bbb'
     webapp ':ProjectC'
   }
