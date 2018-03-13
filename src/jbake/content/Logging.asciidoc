@@ -5,15 +5,15 @@ Andrey Hihlovskiy
 :jbake-type: page
 :jbake-status: published
 
-Gretty protocols it's own messages and messages from servlet container
+Gretty protocols its own messages and messages from servlet container
 with the help of http://logback.qos.ch/[logback-classic] library.
 
-Gretty isolates it's own logging from the web application logging on the level of ClassLoader. That means:
+Gretty isolates its own logging from the web application logging on the level of ClassLoader. That means:
 the logback library (and logback configuration) used by Gretty is not visible within web application.
 You are free to use any logging system - logback, log4j, commons-logging etc. - within your
 web applications.
 
-Gretty supports configuring it's own slf4j/logback logging by two methods:
+Gretty supports configuring its own slf4j/logback logging by two methods:
 
 . If you place "logback.groovy" or "logback.xml" to arbitrary folder and then reference it by +logbackConfigFile+ property, gretty applies the specified configuration to servlet-container process.
 . If "logback.groovy" or "logback.xml" is not specified, gretty configures logging with default settings:
