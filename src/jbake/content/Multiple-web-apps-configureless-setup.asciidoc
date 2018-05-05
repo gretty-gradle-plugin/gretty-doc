@@ -17,7 +17,7 @@ Create file "ProjectA/settings.gradle", insert code:
 
 [source,groovy]
 ----
-include 'ProjectA', 'ProjectB'
+include 'ProjectB', 'ProjectC'
 ----
 
 Explanation: we organize multi-project setup, so that multiple web-apps can be started/stopped by gretty plugin.
