@@ -8,6 +8,7 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
     <meta name="generator" content="JBake">
+    <meta name="google-site-verification" content="nYvNaZt3Uqpt39iOTXBKZ3UpzL55jYK2UszjuPqkHVw" />
 
     <!-- Le styles -->
     <link href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>css/bootstrap.min.css" rel="stylesheet">
