@@ -86,7 +86,7 @@
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>By default each farm web-app is compiled and assembled into WAR-file (if it’s not up-to-date).</p> </li> 
-    <li> <p>If farm configuration <a href="Multiple-web-apps-tutorial.html#_mixing_inplace_and_war_mode">overrides inplace property</a> for some web-apps to <code>true</code>, then each of these web-apps gets compiled without creating WAR-file (if it’s not up-to-date).</p> </li> 
+    <li> <p>If farm configuration <a href="Gretty-configuration.html#_inplacemode">overrides inplace property</a> for some web-apps to <code>true</code>, then each of these web-apps gets compiled without creating WAR-file (if it’s not up-to-date).</p> </li> 
     <li> <p>Embedded servlet-container starts in separate java process against WAR-files (and, optionally, against compiled classes and their dependencies).<br> <strong>important</strong>: Upon start, the process is in suspended-mode and listens for debugger commands on port 5005.</p> </li> 
     <li> <p>Upon resume, servlet-container process starts listening for HTTP-requests on <a href="Farm-configuration.html#_port">port</a> (default 8080).</p> </li> 
     <li> <p>Gretty waits for the user keypress.</p> </li> 

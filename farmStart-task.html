@@ -86,7 +86,7 @@
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>Each farm web-app gets compiled (if it’s not up-to-date).</p> </li> 
-    <li> <p>If farm configuration <a href="Multiple-web-apps-tutorial.html#_mixing_inplace_and_war_mode">overrides inplace property</a> for some web-apps to <code>false</code>, then each of these web-apps is assembled into WAR-file (if it’s not up-to-date).</p> </li> 
+    <li> <p>If farm configuration <a href="Gretty-configuration.html#_inplacemode">overrides inplace property</a> for some web-apps to <code>false</code>, then each of these web-apps is assembled into WAR-file (if it’s not up-to-date).</p> </li> 
     <li> <p>Embedded servlet-container starts in separate java process against compiled classes and their dependencies (and, optionally, against WAR-files) and listens for HTTP-requests on <a href="Farm-configuration.html#_port">port</a> (default 8080).</p> </li> 
     <li> <p>Gretty waits for servlet-container process to complete.</p> </li> 
     <li> <p>Gradle script continues normal execution of tasks.</p> </li> 
