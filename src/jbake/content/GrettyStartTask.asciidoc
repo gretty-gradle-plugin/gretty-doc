@@ -6,4 +6,4 @@ Andrey Hihlovskiy
 :jbake-status: published
 
 Attention: this is deprecated class.
-Please use link:AppStartTask.html[AppStartTask] class instead.
+Please use link:appStart-task.html[appStart task] class instead.
