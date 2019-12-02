@@ -9,6 +9,6 @@ For publishing to github.io:
 ./gradlew publish
 ```
 
-The publish documentation will be visible at the address:
+The published documentation will be visible at the address:
 
 https://gretty-gradle-plugin.github.io/gretty-doc/
