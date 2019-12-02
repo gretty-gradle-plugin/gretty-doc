@@ -7,9 +7,9 @@ Andrey Hihlovskiy
 
 Gretty requires:
 
-* JDK6, JDK7 or JDK8.
+* JDK8+.  For JDK7 and earlier, use Gretty <3.0.0.
 
-* Gradle 1.10 or newer. Gradle 2.1 is highly recommended.
+* Gradle 5.0 or newer. For Gradle <5.0, use Gretty <3.0.0.
 
 * Enough operating memory and disk space to run gradle, jetty, tomcat.
 
